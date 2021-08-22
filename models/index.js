@@ -4,7 +4,7 @@ const Journey = require("./Journey");
 const Post = require("./Post");
 const Comment = require("./Comment");
 const Fellowship = require("./Fellowship");
-const Trail = require("./Trail")
+// const Trail = require("./Trail")
 
 User.belongsToMany(Journey,{
     through: "MembershipIdk",
