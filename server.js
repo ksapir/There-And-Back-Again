@@ -1,41 +1,32 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const logger = require("morgan");
+
+const routes = require("./controllers");
+
+const PORT = process.env.PORT || 3000;
+
 const app = express();
-require("dotenv").config();
-const sequelize = require("./config/connection")
 
-const db = require("./models")
-
-const PORT = process.env.PORT || 3002;
-
-app.use(express.static("public"))
-
+app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
-const session = require("express-session")
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-app.use(session({
-    secret:process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie:{
-        maxAge:1000*60*60*2
-    },
-    store: new SequelizeStore({
-        db: sequelize,
-      })
-}))
 
-const hbs = exphbs.create({});
+// routes
+// app.use(require("./controllers/api"))
+// app.use(require("./controllers/"))
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.use("/", routes);
 
-const allRoutes = require("./controllers")
-app.use(allRoutes);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
-sequelize.sync({force:false}).then(()=>{
-    app.listen(PORT,()=>{
-        console.log(`listening on ${PORT}`)
-    })
-})
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
+});
