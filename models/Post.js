@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
-class Post extends Model {};
+// class Post extends Model {};
 
 const PostSchema = new Schema(
     {
@@ -21,6 +21,6 @@ const PostSchema = new Schema(
 )
 
 
-const PostSchema = mongoose.model("Post", PostSchema);
+const Post = mongoose.model("Post", PostSchema);
 
 module.exports = Post
