@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
-class Comment extends Model{};
+// class Comment extends Model{};
 
 
 const CommentSchema = new Schema(
@@ -21,7 +21,7 @@ const CommentSchema = new Schema(
 )
 
 
-
+const Comment = mongoose.model("Comment", CommentSchema);
 
 
 module.exports = Comment

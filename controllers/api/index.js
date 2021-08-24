@@ -1,5 +1,8 @@
 // api index
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
+const trails = require('./trails')
 
+router.use("/trails", trails);
 
 module.exports = router;

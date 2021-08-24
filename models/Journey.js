@@ -2,23 +2,22 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-class Journey extends Model{};
+// class Journey extends Model{};
 
 
 const JourneySchema = new Schema(
     {
-        members:{
-            id: foreignKey,
-            
-
-        }
+        members:[{
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }]
     }
 )
 
 
 
 
-const JourneySchema = mongoose.model("Journey", JourneySchema);
+const Journey = mongoose.model("Journey", JourneySchema);
 
 
 module.exports = Journey

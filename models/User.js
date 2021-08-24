@@ -4,10 +4,7 @@ const Schema = mongoose.Schema;
 
 // const bcrypt = reuire("bcrypt")
 
-
-
-class User extends Model {};
-
+// class User extends Model {};
 
 const UserSchema = new Schema(
     {
@@ -32,14 +29,15 @@ const UserSchema = new Schema(
         password:{
             type: String,
             allowNull: false,
-            validate: {
-                len:[8]
-            }
+            minLength: 8
+            // validate: {
+            //     minlength:[8]
+            // }
         },
 
         // might need to add more
         avatar: {
-            type: Image,
+            type: String,
             allowNull: false,
 
         }
@@ -51,6 +49,6 @@ const UserSchema = new Schema(
 // Need to pass word hashing
 
 
-const UserSchema = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema);
 
 module.exports = User
