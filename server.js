@@ -15,8 +15,8 @@ app.use(express.static("public"));
 
 
 // routes
-// app.use(require("./controllers/api"))
-// app.use(require("./controllers/"))
+app.use(require("./controllers/api"))
+app.use(require("./controllers/"))
 
 app.use("/", routes);
 
