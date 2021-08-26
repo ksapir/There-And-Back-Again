@@ -10,7 +10,11 @@ const JourneySchema = new Schema(
         members:[{
             type: Schema.Types.ObjectId,
             ref: 'User'
-        }]
+        }],
+        totalMiles: {
+            type: Number,
+            default: 0,
+        }
     }
 )
 

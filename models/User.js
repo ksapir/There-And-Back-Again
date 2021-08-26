@@ -39,7 +39,12 @@ const UserSchema = new Schema(
             type: String,
             allowNull: false,
 
-        }
+        },
+        
+        journey: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Journey'
+        }]
 
     }
 )

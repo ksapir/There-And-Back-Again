@@ -15,17 +15,4 @@ const allTrails = async () => {
 document.querySelector('#allTrails').addEventListener('click', allTrails)
 
 
-const allTrails = async () => {
-  const response = await fetch('/api/trails', {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
 
-  if (response.ok) {
-    document.location.replace('/trails')
-  } else {
-    alert(response.statusText)
-  }
-}
-
-document.querySelector('#allTrails').addEventListener('click', allTrails)
