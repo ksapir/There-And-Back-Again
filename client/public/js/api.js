@@ -1,16 +1,31 @@
-function loadParks() {
-let fetchURL = "./wta-parks-data.json"
+// Grabbing trails and populating page (still have to write code for populating page)
+const allTrails = async () => {
+  const response = await fetch('/api/trails', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
 
-fetch(fetchURL, {
-  cache: 'reload',
-})
-.then(function (response) {
-  return response.json();
-})
-.then(function (data) {
-  console.log(data);
-})
+  if (response.ok) {
+    document.location.replace('/trails')
+  } else {
+    alert(response.statusText)
+  }
+}
 
-};
+document.querySelector('#allTrails').addEventListener('click', allTrails)
 
-loadParks()
+
+const allTrails = async () => {
+  const response = await fetch('/api/trails', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/trails')
+  } else {
+    alert(response.statusText)
+  }
+}
+
+document.querySelector('#allTrails').addEventListener('click', allTrails)

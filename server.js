@@ -20,12 +20,14 @@ app.use(require("./controllers/"))
 
 app.use("/", routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trail", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trail", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false,
+// });
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
