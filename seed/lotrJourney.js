@@ -202,7 +202,7 @@ const LotrJourney = [
         name:"Escape Cirith Ungol ",
         distance:1649,
         description:"Sam follows Frodo and the Orcs to the Tower of Cirith Ungol in Mordor.  Sam puts on the Ring but immediately feels the weight of it. Sam wields Sting against Orcs that he encounters on his way to rescue Frodo. They dress as Orcs to escape. Using the phial of Galandriel, they move past the Watchers and into Mordor.",
-        url:
+        url:"https://thumbs.gfycat.com/WaterloggedNextFritillarybutterfly-max-1mb.gif "
     },
     {
         name:"The Isenmouthe ",
@@ -220,7 +220,7 @@ const LotrJourney = [
         name:"Leave the Road",
         distance:1776,
         description:"Frodo and Sam leave the road to Barad-dur and turn south to Mount Doom",
-        url:
+        url:"https://pbs.twimg.com/media/DSptoS1UMAAuG4W.jpg "
     },
     {
         name:"Foot of Mount Doom ",
