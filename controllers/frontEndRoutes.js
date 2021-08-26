@@ -40,5 +40,5 @@ router.get("/session",(req,res)=>{
 
   //get profile by id
 
-  
+
   module.exports = router

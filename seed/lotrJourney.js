@@ -9,7 +9,7 @@ const LotrJourney = [
         name:"Tookland",
         distance:5,
         description:"a.	Frodo and Sam reach the edge of Tookland and say goodbye to the Shire.",
-        url:"b.	https://lotro-wiki.com/images/thumb/f/f1/Tookland-1.jpg/400px-Tookland-1.jpg "
+        url:"https://lotro-wiki.com/images/thumb/f/f1/Tookland-1.jpg/400px-Tookland-1.jpg "
     },
     {
         name:"Encounter with Black Rider",
@@ -116,7 +116,7 @@ const LotrJourney = [
     {
         name:"Lorien",
         distance:920,
-        description:"he fellowship rests in Lothlorien where they meet Lady Galadriel. She offers them a choice to abandon their quest in exchange for their heart’s desire. She shows Frodo and Sam a vision from the Mirror of Galadriel which can show the past, the present, or the future. Impressed by her power, Frodo offers her the Ring. She is greatly tempted but resists.",
+        description:"The fellowship rests in Lothlorien where they meet Lady Galadriel. She offers them a choice to abandon their quest in exchange for their heart’s desire. She shows Frodo and Sam a vision from the Mirror of Galadriel which can show the past, the present, or the future. Impressed by her power, Frodo offers her the Ring. She is greatly tempted but resists.",
         url:"https://i.pinimg.com/originals/17/8d/cd/178dcdb906b0c226f8059c69a4ee51ce.jpg "
     },
     {
