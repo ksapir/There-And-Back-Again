@@ -16,7 +16,7 @@ const UserSchema = new Schema(
             required: "Enter Username"
         },
 
-        // add regex to validate email
+       
         email:{
             type: String,
             allowNull: false,
@@ -25,7 +25,6 @@ const UserSchema = new Schema(
             required: "Enter Email"
         },
 
-        // add regex to validate password
         password:{
             type: String,
             allowNull: false,
