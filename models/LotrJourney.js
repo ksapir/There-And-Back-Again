@@ -17,7 +17,7 @@ const LotrJourneySchema = new Schema(
         },
         url:{
             type: String,
-        }
+        
     }
 )
 
