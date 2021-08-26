@@ -9,7 +9,7 @@ const LotrJourney = [
         name:"Tookland",
         distance:5,
         description:"a.	Frodo and Sam reach the edge of Tookland and say goodbye to the Shire.",
-        url:"b.	https://lotro-wiki.com/images/thumb/f/f1/Tookland-1.jpg/400px-Tookland-1.jpg "
+        url:"https://lotro-wiki.com/images/thumb/f/f1/Tookland-1.jpg/400px-Tookland-1.jpg "
     },
     {
         name:"Encounter with Black Rider",
@@ -116,7 +116,7 @@ const LotrJourney = [
     {
         name:"Lorien",
         distance:920,
-        description:"he fellowship rests in Lothlorien where they meet Lady Galadriel. She offers them a choice to abandon their quest in exchange for their heart’s desire. She shows Frodo and Sam a vision from the Mirror of Galadriel which can show the past, the present, or the future. Impressed by her power, Frodo offers her the Ring. She is greatly tempted but resists.",
+        description:"The fellowship rests in Lothlorien where they meet Lady Galadriel. She offers them a choice to abandon their quest in exchange for their heart’s desire. She shows Frodo and Sam a vision from the Mirror of Galadriel which can show the past, the present, or the future. Impressed by her power, Frodo offers her the Ring. She is greatly tempted but resists.",
         url:"https://i.pinimg.com/originals/17/8d/cd/178dcdb906b0c226f8059c69a4ee51ce.jpg "
     },
     {
@@ -202,7 +202,7 @@ const LotrJourney = [
         name:"Escape Cirith Ungol ",
         distance:1649,
         description:"Sam follows Frodo and the Orcs to the Tower of Cirith Ungol in Mordor.  Sam puts on the Ring but immediately feels the weight of it. Sam wields Sting against Orcs that he encounters on his way to rescue Frodo. They dress as Orcs to escape. Using the phial of Galandriel, they move past the Watchers and into Mordor.",
-        url:
+        url:"https://thumbs.gfycat.com/WaterloggedNextFritillarybutterfly-max-1mb.gif "
     },
     {
         name:"The Isenmouthe ",
@@ -220,7 +220,7 @@ const LotrJourney = [
         name:"Leave the Road",
         distance:1776,
         description:"Frodo and Sam leave the road to Barad-dur and turn south to Mount Doom",
-        url:
+        url:"https://pbs.twimg.com/media/DSptoS1UMAAuG4W.jpg "
     },
     {
         name:"Foot of Mount Doom ",
