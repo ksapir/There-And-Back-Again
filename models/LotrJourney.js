@@ -19,8 +19,7 @@ const LotrJourneySchema = new Schema(
             type: String,
         
     }
-)
-
+    })
 
 
 

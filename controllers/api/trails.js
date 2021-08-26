@@ -28,9 +28,7 @@ router.post('/profile/:id/:journey/currentwalk', (req,res) => {
       })
       .catch(err => {
         res.json(err);
-      });
-
-    
+      });    
 })
 
  module.exports = router
