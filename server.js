@@ -20,7 +20,7 @@ app.use(require("./controllers/"))
 
 app.use("/", routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trail", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
