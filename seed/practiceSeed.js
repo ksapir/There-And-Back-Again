@@ -9,7 +9,7 @@ const practiceSeed = [
         name:"Tookland",
         distance:5,
         description:"a.	Frodo and Sam reach the edge of Tookland and say goodbye to the Shire.",
-        url:"b.	https://lotro-wiki.com/images/thumb/f/f1/Tookland-1.jpg/400px-Tookland-1.jpg "
+        url:"https://lotro-wiki.com/images/thumb/f/f1/Tookland-1.jpg/400px-Tookland-1.jpg "
     },
     {
         name:"Encounter with Black Rider",
