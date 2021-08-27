@@ -16,7 +16,10 @@ const FellowshipSchema = new Schema(
             type: String
         },
 
-        reaminingDistance: {
+        milesToG0: {
+            type: Number
+        },
+        groupMiles: {
             type: Number
         },
 

@@ -15,12 +15,12 @@ const LotrJourneySchema = new Schema(
         // userDistance:{
         //     type: Number,
         // },
-        // remainingDistance:{
-        //     type: Number,
-        // },
-        description: {
-            type: String,
+        milesToGo:{
+            type: Number,
         },
+        // description: {
+        //     type: String,
+        // },
         url:{
             type: String,
         

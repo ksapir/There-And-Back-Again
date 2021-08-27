@@ -5,6 +5,13 @@
 // // class Journey extends Model{};
 
 
+
+
+// TODO: Dont know if we'll need this if we have specific models for each journey
+
+
+
+
 // const JourneySchema = new Schema(
 //     {
 //         members:[{

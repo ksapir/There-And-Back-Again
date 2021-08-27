@@ -35,10 +35,17 @@ const UserSchema = new Schema(
             // }
         },
 
-                // user contribution 
+                // user contribution total value updated on every input 
             userMiles:{
             type: Number
 
+
+
+        },
+        milesToGo: {
+            // distance remaining on specific journey
+
+            type: Number
 
 
         },
