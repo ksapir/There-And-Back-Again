@@ -12,6 +12,17 @@ const FellowshipSchema = new Schema(
             
 
         // }
+        name:{
+            type: String
+        },
+
+        milesToG0: {
+            type: Number
+        },
+        groupMiles: {
+            type: Number
+        },
+
         members:[{
             type: Schema.Types.ObjectId,
             ref: 'User'

@@ -1,4 +1,5 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const { INTEGER } = require("sequelize");
 
 const Schema = mongoose.Schema;
 
@@ -34,6 +35,23 @@ const UserSchema = new Schema(
             // }
         },
 
+                // user contribution total value updated on every input 
+            userMiles:{
+            type: Number
+
+
+
+        },
+        milesToGo: {
+            // distance remaining on specific journey
+
+            type: Number
+
+
+        },
+
+
+
         // might need to add more
         avatar: {
             type: String,
@@ -41,10 +59,10 @@ const UserSchema = new Schema(
 
         },
         
-        journey: [{
+        journey: {
             type: Schema.Types.ObjectId,
             ref: 'Journey'
-        }]
+        }
 
     }
 )

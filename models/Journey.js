@@ -1,27 +1,35 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
-// class Journey extends Model{};
-
-
-const JourneySchema = new Schema(
-    {
-        members:[{
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }],
-        totalMiles: {
-            type: Number,
-            default: 0,
-        }
-    }
-)
+// // class Journey extends Model{};
 
 
 
 
-const Journey = mongoose.model("Journey", JourneySchema);
+// TODO: Dont know if we'll need this if we have specific models for each journey
 
 
-module.exports = Journey
+
+
+// const JourneySchema = new Schema(
+//     {
+//         members:[{
+//             type: Schema.Types.ObjectId,
+//             ref: 'User'
+//         }],
+//         totalMiles: {
+//             type: Number,
+//             default: 0,
+//         }
+
+//     }
+// )
+
+
+
+
+// const Journey = mongoose.model("Journey", JourneySchema);
+
+
+// module.exports = Journey
