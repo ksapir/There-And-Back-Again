@@ -12,6 +12,14 @@ const FellowshipSchema = new Schema(
             
 
         // }
+        name:{
+            type: String
+        },
+
+        reaminingDistance: {
+            type: Number
+        },
+
         members:[{
             type: Schema.Types.ObjectId,
             ref: 'User'

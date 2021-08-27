@@ -9,18 +9,28 @@ const LotrJourneySchema = new Schema(
         name:{
             type: String,
         },
-        distance:{
+        totalDistance:{
             type: Number,
         },
+        // userDistance:{
+        //     type: Number,
+        // },
+        // remainingDistance:{
+        //     type: Number,
+        // },
         description: {
             type: String,
         },
         url:{
             type: String,
         
+    },
+    members:[{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }]
     }
 )
-
 
 
 
