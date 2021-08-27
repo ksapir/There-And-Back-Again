@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { checkPassword, validateEmail } from '../utils/helpers';
+
+const styles = {
+    form: {
+        margin: '20px',
+    },
+    input: {
+        display: 'block',
+        marginTop: '5px',
+        marginBottom: '5px',
+        width: '100%',
+        borderRadius: '5px',
+    },
+    center: {
+        textAlign: 'center'
+    }
+}
 
 function LandingPage() {
     // Create state variables for the fields in the form
@@ -50,25 +66,28 @@ function LandingPage() {
     };
 
     return (
-        <div className="container">
+        <div className="container" style={styles.center}>
+                <h1 >Let's Go on an Adventure!</h1>
             <div className="row">
-                <div className="col-sm-12 col-md-6 col-lg-6">
-                    <form className="form">
-                        <input
+                <div className="col-sm-12 col-md-5
+                 col-lg-5
+                 border">
+                    <form style={styles.form} className="form">
+                        <input style={styles.input}
                             value={email}
                             name="email"
                             onChange={handleInputChange}
                             type="email"
                             placeholder="email"
                         />
-                        <input
+                        <input style={styles.input}
                             value={userName}
                             name="userName"
                             onChange={handleInputChange}
                             type="text"
                             placeholder="username"
                         />
-                        <input
+                        <input style={styles.input}
                             value={password}
                             name="password"
                             onChange={handleInputChange}
@@ -83,40 +102,27 @@ function LandingPage() {
                         </div>
                     )}
                 </div>
-
-
-                <div className="container">
-                    <div className="row">
-                        <h1>Let's Go on an Adventure!</h1>
-                        <div className="row">
-                            <div className="col-sm-12 col-md-6 col-lg-6">
-                                <Form>
-                                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Label>Email address</Form.Label>
-                                        <Form.Control type="email" placeholder="Enter email" />
-                                        <Form.Text className="text-muted">
-                                            We'll never share your email with anyone else.
-                                        </Form.Text>
-                                    </Form.Group>
-
-                                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Label>Password</Form.Label>
-                                        <Form.Control type="password" placeholder="Password" />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                        <Form.Check type="checkbox" label="Check me out" />
-                                    </Form.Group>
-                                    <Button variant="primary" type="submit">
-                                        Submit
-                                    </Button>
-                                </Form>
-                            </div>
-                        </div>
-                    </div>
+                <div className="col-sm-12 col-md-5
+                 col-lg-5
+                 border">
+                    <form style={styles.form}>
+                        <input style={styles.input}
+                            name="email"
+                            type="email"
+                            placeholder="email"
+                        />
+                        <input style={styles.input}
+                            name="password"
+                            type="password"
+                            placeholder="password"
+                        />
+                        <button type="button">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
+
     )
 }
 
-                export default {Form, LandingPage}
+export default LandingPage
