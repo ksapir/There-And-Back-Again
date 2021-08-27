@@ -1,0 +1,32 @@
+* {
+    margin: auto;
+    padding: auto;
+}
+nav{
+    display: flex;
+}
+
+header {
+    text-align: center;
+    height: 100px;
+}
+
+h1 {
+    margin: 100px;
+}
+
+footer {
+    text-align: center;
+    height: 100px;
+    margin: 20px;
+}
+
+.border {
+    border: 2px black solid;
+    margin: 20px;
+}
+
+.center {
+    text-align: center;
+    align-items: center;
+}
