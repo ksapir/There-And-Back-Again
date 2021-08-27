@@ -20,10 +20,10 @@ router.get("/", (req,res) =>{
 router.post('/profile/:id/:journey/currentwalk', (req,res) => {
     let userId = req.params.id
     let journeyId = req.params.journey
-    let userMilesWalked = req.body.userMilesWalked
+    let  userMiles = req.body.userMilesWalked
     db.Journey.findById(journeyId)
     .then(dbJourney => {
-        db.Journey.update({id:req.params.id}), {$set: {distance: userMilesWalked + dbJourney.totalMiles}}
+        db.Journey.update({id:req.params.id}), {$set: {distanceRemaining: userMiles + dbJourney.totalMiles}}
         res.json(dbJourney);
       })
       .catch(err => {
