@@ -69,25 +69,25 @@ function LandingPage() {
         <div className="container" style={styles.center}>
                 <h1 >Let's Go on an Adventure!</h1>
             <div className="row">
-                <div className="col-sm-12 col-md-5
-                 col-lg-5
+                <div className="col s12 m5
+                 m5
                  border">
-                    <form style={styles.form} className="form">
-                        <input style={styles.input}
+                    <form>
+                        <input
                             value={email}
                             name="email"
                             onChange={handleInputChange}
                             type="email"
                             placeholder="email"
                         />
-                        <input style={styles.input}
+                        <input
                             value={userName}
                             name="userName"
                             onChange={handleInputChange}
                             type="text"
                             placeholder="username"
                         />
-                        <input style={styles.input}
+                        <input
                             value={password}
                             name="password"
                             onChange={handleInputChange}
@@ -102,16 +102,16 @@ function LandingPage() {
                         </div>
                     )}
                 </div>
-                <div className="col-sm-12 col-md-5
-                 col-lg-5
+                <div className="col s12 m5
+                 m5
                  border">
-                    <form style={styles.form}>
-                        <input style={styles.input}
+                    <form >
+                        <input
                             name="email"
                             type="email"
                             placeholder="email"
                         />
-                        <input style={styles.input}
+                        <input
                             name="password"
                             type="password"
                             placeholder="password"
