@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import mileInput from '../components/logMiles/MileInput';
 
 import { checkPassword, validateEmail } from '../utils/helpers';
 
@@ -66,7 +67,11 @@ function LandingPage() {
     };
 
     return (
+       
+
+
         <div className="container" style={styles.center}>
+             <mileInput/>
                 <h1 >Let's Go on an Adventure!</h1>
             <div className="row">
                 <div className="col s12 m5

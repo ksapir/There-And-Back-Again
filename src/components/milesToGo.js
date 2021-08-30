@@ -41,49 +41,13 @@
 // module.exports = User;
 // module.exports = LotrJourney;
 
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
-export default function MilesToGo() {
-    const [miles, setMiles] = useState('');
-    const [time, setTime] = useState('');
+// export default function MilesToGo() {
+//     const [miles, setMiles] = useState('');
+//     const [time, setTime] = useState('');
 
 
-    const handleInputChange = (e) => {
-        // Getting the value and name of the input which triggered the change
-        const { target } = e;
-        const inputType = target.name;
-        const inputValue = target.value;
-
-        // Based on the input type, we set the state of either email, username, and password
-        if (inputType === 'miles') {
-            setMiles(inputValue);
-        } else if (inputType === 'time') {
-            setTime(inputValue);
-        }
-    };
-
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-
-        
-
-        setMiles('');
-        setTime('');
-    };
-    return (
-        <div className="container">
-            <div className="row">
-            <h2>Add A Walk</h2>
-            <div className="col-sm-12 col-md-4 col-lg-4">
-                <form>
-                    <input className="form"
-                        name ="milesInput"
-                        onChange = {handleInputChange}
-                        placeholder = "miles"/>
-                   <button type="button" onClick={handleFormSubmit}>Submit</button>
-                </form>
-            </div>
-            </div>
-        </div>
-    );
-}
+// module.exports = Fellowship;
+// module.exports = User;
+// module.exports = LotrJourney;

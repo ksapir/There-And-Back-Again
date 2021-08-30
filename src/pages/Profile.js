@@ -1,11 +1,13 @@
 import React from 'react';
-import MilesToGo from '../components/milesToGo'
+import CurrentWalk from '../components/CurrentWalk'
+import Progress from '../components/Progress'
 
 export default function Profile() {
     return(
         <div className="container center">
             <div className="row">
-                <MilesToGo/>
+                <CurrentWalk/>
+                <Progress />
             </div>
         </div>
     )
