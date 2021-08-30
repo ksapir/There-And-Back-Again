@@ -1,9 +1,9 @@
 // const mongoose = require("mongoose");
-// import Fellowship from ("../../server/models/Fellowship");
-// import LotrJourney from ("../../server/models/LotrJourney");
+// import Fellowship from ('../../server/models/Fellowship');
+// import LotrJourney from ('../../server/models/LotrJourney');
 
-// import User from("../../server/models/User");
-// // import mileInput from "./components/mileInput";
+// import User from('../../server/models/User');
+// import mileInput from './components/mileInput';
 
 
 
@@ -35,6 +35,17 @@
 // }
 
 
+
+
+// module.exports = Fellowship;
+// module.exports = User;
+// module.exports = LotrJourney;
+
+// import React, { useState } from 'react'
+
+// export default function MilesToGo() {
+//     const [miles, setMiles] = useState('');
+//     const [time, setTime] = useState('');
 
 
 // module.exports = Fellowship;

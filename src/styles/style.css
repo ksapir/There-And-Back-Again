@@ -17,8 +17,7 @@ h1 {
 
 footer {
     text-align: center;
-    height: 100px;
-    margin: 20px;
+
 }
 
 .border {
@@ -29,4 +28,16 @@ footer {
 .center {
     text-align: center;
     align-items: center;
+}
+
+form {
+    margin: 20px
+}
+
+input {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    border-radius: 5px;
 }
