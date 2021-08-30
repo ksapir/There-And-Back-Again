@@ -1,9 +1,17 @@
 
-import React from 'react'
+import React,{useState} from 'react'
+import User from '../logMiles/'
 
-export default function mileInput(){
+export default function mileInput(props){
+const[formState, setFormState]= useState({
 
-    //User mile input component 
+})
+    
+}
+
+
+
+
 
 
     // need to store and call upon distance reamaining in 
@@ -34,5 +42,3 @@ export default function mileInput(){
         </form>
     
     </div>
-}
-
