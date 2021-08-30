@@ -31,6 +31,7 @@ function App() {
             <Route exact path='/'><LandingPage /></Route>
             <Route exact path='/profile'><Profile /></Route>
             <Route exact path='/trailfinder'><TrailFinder /></Route>
+          
           </Switch>
           <Footer />
         </div>
