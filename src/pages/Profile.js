@@ -1,5 +1,5 @@
 import React from 'react';
-import MilesToGo from '../components/MilesToGo'
+import MilesToGo from '../components/milesToGo'
 
 export default function Profile() {
     return(
