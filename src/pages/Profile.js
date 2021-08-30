@@ -3,7 +3,7 @@ import MilesToGo from '../components/MilesToGo'
 
 export default function Profile() {
     return(
-        <div className="container">
+        <div className="container center">
             <div className="row">
                 <MilesToGo/>
             </div>

@@ -74,16 +74,12 @@ export default function MilesToGo() {
         <div className="container">
             <div className="row">
             <h2>Add A Walk</h2>
-            <div className="col s4 m4 l4">
+            <div className="col-sm-12 col-md-4 col-lg-4">
                 <form>
                     <input className="form"
                         name ="milesInput"
                         onChange = {handleInputChange}
                         placeholder = "miles"/>
-                    <input className="form"
-                        name ="timeInput"
-                        onChange = {handleInputChange}
-                        placeholder = "time"/>
                    <button type="button" onClick={handleFormSubmit}>Submit</button>
                 </form>
             </div>

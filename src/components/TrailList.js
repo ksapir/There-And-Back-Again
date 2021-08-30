@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default function Trail(props){
+export default function TrailList(props){
     return(
         <div>
         <div className="card">
@@ -11,11 +11,11 @@ export default function Trail(props){
             alt="Card cap"
           />
           <div className="card-body">
-            <h5 className="card-title">{props.name}</h5>
-            <p className="card-text">{props.length}</p>
-            <a href="#" className="btn btn-primary">
-              See more info
-            </a>
+            <h5 className="card-title">Trail.Name</h5>
+            <p className="card-text">Trail.parkname</p>
+            <p className="card-text">Trail.distance</p>
+            <p className="card-text">Trail.location, trail.state</p>
+            <p className="card-text">Trail.descrption</p>
           </div>
         </div>
       </div>
