@@ -5,10 +5,8 @@ import Progress from '../components/Progress'
 export default function Profile() {
     return(
         <div className="container center">
-            <div className="row">
                 <CurrentWalk/>
                 <Progress />
-            </div>
         </div>
     )
 }

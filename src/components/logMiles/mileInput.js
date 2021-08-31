@@ -14,7 +14,7 @@ export default function MileInput(props) {
     
   };
   return (
-    <div>
+    <div className="section">
       <form onSubmit={handleSubmit}>
         <input
           type="text"

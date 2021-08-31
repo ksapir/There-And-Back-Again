@@ -18,13 +18,13 @@ function App() {
   return (
     <Router>
       <div>
-      <header>
+      <header className="section">
         <h1>There and Back Again</h1>
         <nav >
-          <Link to='/'>Home</Link>
-          <Link to='/profile'>My Profile</Link>
-          <Link to='/trailfinder'>Trail Finder</Link>
-          <Link to='/mywalks'>My Walks</Link>
+          <Link className="section" to='/'>Home</Link>
+          <Link className="section" to='/profile'>My Profile</Link>
+          <Link className="section" to='/trailfinder'>Trail Finder</Link>
+          <Link className="section" to='/mywalks'>My Walks</Link>
         </nav>
       </header>
       </div>
