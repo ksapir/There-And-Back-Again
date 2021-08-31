@@ -67,16 +67,11 @@ function LandingPage() {
     };
 
     return (
-       
-
-
-        <div className="container" style={styles.center}>
+        <div className="container section" style={styles.center}>
              <mileInput/>
-                <h1 >Let's Go on an Adventure!</h1>
+                <h2 >Let's Go on an Adventure!</h2>
             <div className="row">
-                <div className="col s12 m5
-                 m5
-                 border">
+                <div className="col s12 m5 border">
                     <form>
                         <input
                             value={email}

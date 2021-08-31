@@ -8,7 +8,7 @@ const styles = {
 
 export default function Footer() {
     return (
-        <div style={styles.foot} className="center border">
+        <div style={styles.foot} className="container center section">
             <p> Created by The Fellowship</p>
         </div>
     )

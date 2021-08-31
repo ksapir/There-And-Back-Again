@@ -3,15 +3,11 @@ import { Card } from 'react-bootstrap'
 
 export default function PastWalk() {
     return (
-        <Card className="text-center">
-            <Card.Header>Date</Card.Header>
-            <Card.Body>
-                <Card.Title>Past Walk Title</Card.Title>
-                <Card.Text>
-                    Description
-                </Card.Text>
-            </Card.Body>
-            <Card.Footer className="text-muted">Miles to go:</Card.Footer>
-        </Card>
+        <div className="container section">
+            <h3>Date</h3>
+            <h4>Past Walk Title</h4>
+            <p>Description</p>
+            <p>Miles to go:</p>
+        </div>
     )
 }
