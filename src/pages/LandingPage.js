@@ -1,23 +1,7 @@
 import React, { useState } from 'react';
-import mileInput from '../components/logMiles/MileInput';
+// import mileInput from '../components/logMiles/MileInput';
 
 import { checkPassword, validateEmail } from '../utils/helpers';
-
-const styles = {
-    form: {
-        margin: '20px',
-    },
-    input: {
-        display: 'block',
-        marginTop: '5px',
-        marginBottom: '5px',
-        width: '100%',
-        borderRadius: '5px',
-    },
-    center: {
-        textAlign: 'center'
-    }
-}
 
 function LandingPage() {
     // Create state variables for the fields in the form
@@ -60,19 +44,18 @@ function LandingPage() {
         }
         alert(`Hello ${userName}`);
 
-
         setUserName('');
         setPassword('');
         setEmail('');
     };
 
     return (
-        <div className="container section" style={styles.center}>
-             <mileInput/>
+        <div className="container center section">
+             {/* <mileInput/> */}
                 <h2 >Let's Go on an Adventure!</h2>
             <div className="row">
-                <div className="col s12 m5 border">
-                    <form>
+                <div className="col-sm-12 col-md-5 col-md-5 border">
+                    <form >
                         <input
                             value={email}
                             name="email"
@@ -102,9 +85,7 @@ function LandingPage() {
                         </div>
                     )}
                 </div>
-                <div className="col s12 m5
-                 m5
-                 border">
+                <div className="col-sm-12 col-md-5 col-md-5 border">
                     <form >
                         <input
                             name="email"

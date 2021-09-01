@@ -13,38 +13,10 @@ const URL_PREFIX = "http://loacalhost:3000"
 const API = {
 
   // example front end route
-
   login: function (userData) {
     return axios.post(`${URL_PREFIX})/login`, userData)
   },
-
-  
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Grabbing trails and populating page (still have to write code for populating page)
 const allTrails = async () => {
