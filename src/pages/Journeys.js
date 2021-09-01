@@ -1,7 +1,7 @@
 import React from 'react';
-import Fellowship from '../components/Fellowship';
+import Fellowship from '../components/Journey';
 
-export default function Fellowships() {
+export default function Journeys() {
     return (
         <div className="container section center">
             <h3>Your Fellowship</h3>
