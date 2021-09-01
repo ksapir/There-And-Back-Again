@@ -1,7 +1,11 @@
 // const axios = require("axios")
 
 // local
+<<<<<<< HEAD
 const URL_PREFIX = "http://loacalhost:3001"
+=======
+const URL_PREFIX = "http://localhost:3001"
+>>>>>>> 059192a948dc8954cb1e7c185aaedf7cb321660f
 
 // deployed
 // created but nothing pushed to heroku  
@@ -13,8 +17,8 @@ const URL_PREFIX = "http://loacalhost:3001"
 const API = {
 
   // example front end route
-
   login: function (userData) {
+<<<<<<< HEAD
     return fetch.post(`${URL_PREFIX})/login`, userData)
   },
 
@@ -86,9 +90,16 @@ const allTrails = async () => {
   } else {
     alert(response.statusText)
   }
+=======
+    return axios.post(`${URL_PREFIX}/login`, userData)
+  },
+
+  allTrails: function() {
+    return axios.get(`${URL_PREFIX}/api/trails`)
+  },
+>>>>>>> 059192a948dc8954cb1e7c185aaedf7cb321660f
 }
 
-document.querySelector('#allTrails').addEventListener('click', allTrails)
-
+export default API
 
 
