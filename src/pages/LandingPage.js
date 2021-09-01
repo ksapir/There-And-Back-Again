@@ -4,6 +4,11 @@ import React, { useState } from 'react';
 import { checkPassword, validateEmail } from '../utils/helpers';
 
 function LandingPage() {
+    const styles = {
+        space: {
+            paddingBottom: '30px'
+        }
+    }
     // Create state variables for the fields in the form
     // We are also setting their initial values to an empty string
     const [email, setEmail] = useState('');
@@ -29,12 +34,11 @@ function LandingPage() {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-
+        // const [user, setUser] = useState('')
+        
         if (!validateEmail(email) || !userName) {
             setErrorMessage('Email or username is invalid');
-
             return;
-
         }
         if (!checkPassword(password)) {
             setErrorMessage(
@@ -47,12 +51,25 @@ function LandingPage() {
         setUserName('');
         setPassword('');
         setEmail('');
+
+        // const[user, setUser] = useState('')
+
+        // useEffect(() => {
+        //   fetch('http://localhost:3000/api/trails')
+        //   .then(res => {
+        //     return res.json()
+        //   })
+        //   .then(data => {
+        //     setTrails(data)
+        //   })
+        // }, [])
     };
 
     return (
         <div className="container center section">
-             {/* <mileInput/> */}
+     
                 <h2 >Let's Go on an Adventure!</h2>
+
             <div className="row">
                 <div className="col-sm-12 col-md-5 col-md-5 border">
                     <form >
@@ -100,6 +117,9 @@ function LandingPage() {
                         <button type="button">Submit</button>
                     </form>
                 </div>
+            </div>
+            <div className="row">
+             <img style={styles.space} src="https://i.kym-cdn.com/entries/icons/original/000/000/143/493654d6ef.jpg" alt="Boromir Meme"/>
             </div>
         </div>
 

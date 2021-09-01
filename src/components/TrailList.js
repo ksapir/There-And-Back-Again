@@ -7,11 +7,6 @@ export default function TrailList({ trails }){
       <div>
         {trails.map((trail) => (
         <div className=" section row">
-          {/* <section className="col-sm-12 col-md-6 col-lg-6">
-          <img
-            src={`http://placekitten.com/200/300`}
-            alt="Card cap"/>
-          </section> */}
           <section className="col-sm-12 col-md-6 col-lg-6" key={trail._id}>
             <h2>{ trail.name }</h2>
             <p >Park: { trail.parkName }</p>

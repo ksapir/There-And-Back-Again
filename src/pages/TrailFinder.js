@@ -1,18 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import TrailList from '../components/TrailList'
 import { Form } from 'react-bootstrap';
+import API from "../utils/API"
 
 
 export default function TrailFinder() {
     const[trails, setTrails] = useState([])
 
     useEffect(() => {
-      fetch('http://localhost:3000/api/trails')
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        setTrails(data)
+      API.allTrails().then(res => {
+          console.log(res)
+          setTrails(res.data)
       })
     }, [])
   
@@ -28,7 +26,17 @@ export default function TrailFinder() {
  
         </div>
         <div className="container center">
-            <TrailList trails={trails} title="All Trails!"/>}
+        {trails.map((trail) => (
+        <div className=" section row">
+          <section className="col-sm-12 col-md-6 col-lg-6" key={trail._id}>
+            <h2>{ trail.name }</h2>
+            <p >Park: { trail.parkName }</p>
+            <p >Distance: { trail.distance }</p>
+            <p >City, State: { trail.location}, { trail.state}</p>
+            <p >Description: { trail.description }</p>
+          </section>
+        </div>
+        ))}
         </div>
     </div>
 
