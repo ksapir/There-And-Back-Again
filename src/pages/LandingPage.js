@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import mileInput from '../components/logMiles/MileInput';
+// import mileInput from '../components/logMiles/MileInput';
 
 import { checkPassword, validateEmail } from '../utils/helpers';
 
@@ -64,11 +64,16 @@ function LandingPage() {
         setUserName('');
         setPassword('');
         setEmail('');
+
+
+
+
+        
     };
 
     return (
         <div className="container section" style={styles.center}>
-             <mileInput/>
+             {/* <mileInput/> */}
                 <h2 >Let's Go on an Adventure!</h2>
             <div className="row">
                 <div className="col s12 m5 border">

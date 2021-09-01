@@ -1,7 +1,7 @@
-const axios = require("axios")
+// const axios = require("axios")
 
 // local
-const URL_PREFIX = "http://loacalhost:3000"
+const URL_PREFIX = "http://loacalhost:3001"
 
 // deployed
 // created but nothing pushed to heroku  
@@ -15,15 +15,43 @@ const API = {
   // example front end route
 
   login: function (userData) {
-    return axios.post(`${URL_PREFIX})/login`, userData)
+    return fetch.post(`${URL_PREFIX})/login`, userData)
   },
 
-  
+  signup: function (userData) {
+    return fetch.post(`${URL_PREFIX}/signup`, userData) 
+  },
+
+  getProfile: function (token) {
+    return fetch.get(`${URL_PREFIX}/profile`, {
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    })
+  },
+
+  // updateUser: function(token) {
+  //   return fetch.put(`${URL_PREFIX}/api/users/:id`, {
+  //     headers: {
+  //       authorization: `Bearer ${token}`
+  //     }
+  //   })
+  // },
+
+  // updateGroup: function(token) {
+  //   return fetch.put(`${URL_PREFIX}/api/fellowship/:id`, {
+  //     headers: {
+  //       authorization: `Bearer ${token}`
+  //     }
+  //   })
+  // },
+
+
+
+
 
 
 }
-
-
 
 
 
