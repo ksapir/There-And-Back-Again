@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, {useState} from 'react';
 
 const styles={
     center: {
@@ -12,11 +13,11 @@ export default function InBetween() {
             <div className="row">
                 <section className="col-sm-12 col-md-6 col-lg-6">
                     <h3>You just left Bagend</h3>
-                    <p>You walked X miles</p>
+                    <p>You walked X miles</p> 
                 </section>
                 <section style={styles.center} className="col-sm-12 col-md-6 col-lg-6">
                     <h3>Next stop:</h3>
-                    <p>Miles to go: </p>
+                    <p>Miles to go: </p> 
                 </section>
             </div>
             
