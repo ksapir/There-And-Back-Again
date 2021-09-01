@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Progress() {
     return (
-        <div className="container section">
+        <div className="container center section">
             <h4>Your Progress On The Way To Mordor</h4>
             <div className="row">
             <section className="col-sm-12 col-md-6 col-lg-6">

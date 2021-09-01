@@ -2,59 +2,54 @@
 * {
     margin: auto;
     padding: auto;
-    color: white;
 }
 
 :root {
     --background: #CBA836;
     --translucent: rgba(143, 127, 94, 0.8);
+    --textColor: white;
 }
 
 body {
     background: url(//i5.walmartimages.com/asr/7034507f-ae3d-4091-8eba-8f71135fe36c.362dbf6a647df8cb6804e769c35bf989.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff) no-repeat center center fixed;
     background-size: cover;
+    color: var(--textColor);
+    
 }
 
 div {
-    margin: 50px;
+    margin: 30px;
     font-size: 25px !important;
     font-family: 'Bilbo Swash Caps', cursive;
+    color: var(--textColor)
 }
 
 
 .section {
     background-color: var(--translucent);
-    padding: 15px;
 }
 
 nav{
     display: flex;
-
-}
-
-header {
-    text-align: center;
-    height: 100px;
-    padding-top: 20px;
-    color: white;
-    margin-bottom: 20px !important;
 }
 
 h1, 
 h2,
 h3,
 h4 {
-    font-family: 'ringbearer';
+    font-family: 'Uncial Antiqua', cursive;
+    color: var(--textColor);
 }
 
 footer {
     text-align: center;
+    color: var(--textColor)
 
 }
 
 .border {
-    border: 2px black solid;
-    margin: 20px;
+    border: 2px black solid; 
+    border-radius: 5px;
 }
 
 .center {
@@ -68,8 +63,6 @@ form {
 
 input {
     display: block;
-    margin-top: 5px;
-    margin-bottom: 5px;
     width: 100%;
     border-radius: 5px;
 }
@@ -78,6 +71,3 @@ a {
     color: white !important;
 }
 
-button {
-    background-color: black;
-}

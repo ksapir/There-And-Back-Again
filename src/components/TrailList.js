@@ -1,23 +1,21 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
+
  
-export default function TrailList(props){
-    return(
+export default function TrailList({ trails }){
+
+      return(
       <div>
-        <div className="row">
-          <section className="col-sm-12 col-md-6 col-lg-6">
-          <img
-            src={`http://placekitten.com/200/300`}
-            alt="Card cap"/>
-          </section>
-          <section className="col-sm-12 col-md-6 col-lg-6">
-            <h2>Trail.Name</h2>
-            <p >Trail.parkname</p>
-            <p >Trail.distance</p>
-            <p >Trail.location, trail.state</p>
-            <p >Trail.descrption</p>
+        {trails.map((trail) => (
+        <div className=" section row">
+          <section className="col-sm-12 col-md-6 col-lg-6" key={trail._id}>
+            <h2>{ trail.name }</h2>
+            <p >Park: { trail.parkName }</p>
+            <p >Distance: { trail.distance }</p>
+            <p >City, State: { trail.location}, { trail.state}</p>
+            <p >Description: { trail.description }</p>
           </section>
         </div>
+        ))}
       </div>
     )
 }

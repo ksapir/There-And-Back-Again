@@ -1,25 +1,14 @@
 import React, { useState } from 'react';
-import mileInput from '../components/logMiles/MileInput';
+// import mileInput from '../components/logMiles/MileInput';
 
 import { checkPassword, validateEmail } from '../utils/helpers';
 
-const styles = {
-    form: {
-        margin: '20px',
-    },
-    input: {
-        display: 'block',
-        marginTop: '5px',
-        marginBottom: '5px',
-        width: '100%',
-        borderRadius: '5px',
-    },
-    center: {
-        textAlign: 'center'
-    }
-}
-
 function LandingPage() {
+    const styles = {
+        space: {
+            paddingBottom: '30px'
+        }
+    }
     // Create state variables for the fields in the form
     // We are also setting their initial values to an empty string
     const [email, setEmail] = useState('');
@@ -45,12 +34,11 @@ function LandingPage() {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-
+        // const [user, setUser] = useState('')
+        
         if (!validateEmail(email) || !userName) {
             setErrorMessage('Email or username is invalid');
-
             return;
-
         }
         if (!checkPassword(password)) {
             setErrorMessage(
@@ -60,19 +48,31 @@ function LandingPage() {
         }
         alert(`Hello ${userName}`);
 
-
         setUserName('');
         setPassword('');
         setEmail('');
+
+        // const[user, setUser] = useState('')
+
+        // useEffect(() => {
+        //   fetch('http://localhost:3000/api/trails')
+        //   .then(res => {
+        //     return res.json()
+        //   })
+        //   .then(data => {
+        //     setTrails(data)
+        //   })
+        // }, [])
     };
 
     return (
-        <div className="container section" style={styles.center}>
-             <mileInput/>
+        <div className="container center section">
+     
                 <h2 >Let's Go on an Adventure!</h2>
+
             <div className="row">
-                <div className="col s12 m5 border">
-                    <form>
+                <div className="col-sm-12 col-md-5 col-md-5 border">
+                    <form >
                         <input
                             value={email}
                             name="email"
@@ -102,9 +102,7 @@ function LandingPage() {
                         </div>
                     )}
                 </div>
-                <div className="col s12 m5
-                 m5
-                 border">
+                <div className="col-sm-12 col-md-5 col-md-5 border">
                     <form >
                         <input
                             name="email"
@@ -119,6 +117,9 @@ function LandingPage() {
                         <button type="button">Submit</button>
                     </form>
                 </div>
+            </div>
+            <div className="row">
+             <img style={styles.space} src="https://i.kym-cdn.com/entries/icons/original/000/000/143/493654d6ef.jpg" alt="Boromir Meme"/>
             </div>
         </div>
 
