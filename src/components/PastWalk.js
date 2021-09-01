@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default function PastWalk() {
     return (
         <div className="container section">

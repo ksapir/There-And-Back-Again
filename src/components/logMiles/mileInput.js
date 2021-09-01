@@ -1,74 +1,107 @@
 import React, { useState } from "react";
-// import User from '../logMiles/'
+const initialFormnData = {
+  formMiles: "",
+};
+// import API from '../../utils/API'
+Object.freeze(initialFormnData);
 
 export default function MileInput(props) {
-  const [formState, setFormState] = useState("");
+  const [formState, setFormState] = useState({ ...initialFormnData });
+
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+    // console.log(formState)
+  };
 
   const handleSubmit = (e) => {
-    // setFormState(e.target.value)\
-     e.preventDefault();
+    e.preventDefault();
+    const userMiles = 50;
+    const groupMiles = 50;
+    const userMilesToGo = 1900;
+    const groupMilesToGo= 1900;
+
+
+
+    // console log
+    console.log("current user miles " + userMiles);
+    console.log("current group miles " + groupMiles);
+    console.log("current user miles left to go " + userMilesToGo);
+    console.log("current group miles left to go  " + groupMilesToGo);
+    
     console.log(formState);
-    alert(`${formState}`)
-   
 
     
+
+    const newUserMiles = parseInt(formState.formMiles) + parseInt(userMiles);
+
+    const newGroupMiles = parseInt(formState.formMiles) + parseInt(groupMiles);
+
+    const newUserMilesToGo = parseInt(userMilesToGo) - parseInt(formState.formMiles);
+
+    const newGroupMilesToGo = parseInt(groupMilesToGo) - parseInt(formState.formMiles);
+
+
+    // console log 
+    console.log("updated user miles " + newUserMiles);
+    console.log("updated group miles " + newGroupMiles);
+    console.log("updated user miles left to go " + newUserMilesToGo);
+    console.log("updated group miles left to go " + newGroupMilesToGo)
+
+
+    // fetch user id and update userMiles
+    // fetch("api/users/:id")
+    // API.updateUser
+    fetch("https://localhost:3001/users/:id", {
+      method: "post",
+      body: JSON.stringify({
+        userMiles: `${newUserMiles}`,
+        userMilesToGo: `${newUserMilesToGo}`
+      }),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then(function () {
+        console.log("userMiles logged!");
+        console.log("userMilesToGo logged!");
+      })
+      .catch((error) => console.log(error));
+
+
+
+// fetch by fellowship id and update groupMiles
+ // fetch by fellowship id and update groupMilesToGo
+    // fetch("api/fellowship/:id")
+    fetch("https://localhost:3001/fellowships/:id",{
+      method: "post",
+      body: JSON.stringify({
+        groupMiles: `${newGroupMiles}`,
+        groupMilesToGo:`${newGroupMilesToGo}`
+      }),
+      headers: {"Content-Type": "application/json"},
+    })
+    .then(function () {
+      console.log("groupMiles logged!");
+      console.log("groupMilestoGo logged!");
+    })
+      .catch((err) => console.log(err));
+
+
+     
   };
+
   return (
-    <div className="section">
+    <div>
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
+          type="number"
           id="mileLog"
           placeholder="log miles"
-          onChange={(e) => setFormState(e.target.value)}
-          value={formState}
+          name="formMiles"
+          value={formState.formMiles}
+          onChange={handleChange}
         />
         <button type="submit">Log Miles</button>
       </form>
     </div>
   );
 }
-
-// // need to store and call upon distance reamaining in
-
-// getRemaining(){
-
-//     const distanceRemaining = 1900
-
-//     var input = Number(document.getElementById("usermiles").value);
-//     var remaining = Number(distanceRemaining).value;
-//     var distanceToGo = remaining - input
-//     document.getElementById("updatedDistanceRemaining").value = distanceToGo.toFixed(2);
-//     console.log(distanceToGo)
-
-// }
-// <div className="container">
-
-//     // need to store and call upon distance reamaining in 
-    
-//     getRemaining(){
-
-//         const distanceRemaining = 1900 
-
-//         var input = Number(document.getElementById("usermiles").value);
-//         var remaining = Number(distanceRemaining).value;
-//         var distanceToGo = remaining - input
-//         document.getElementById("updatedDistanceRemaining").value = distanceToGo.toFixed(2);
-//         console.log(distanceToGo)
-
-//     }
-//     <div className="container">
-        
-//       <h1>
-//         Your FellowShip has travelled 'X' Miles on their Journey to mordor
-//         </h1>
-        
-
-//         <form>
-
-//             <label>Log miles</label>
-//                <input type="number" name="userDistance" id="userMiles" placeholder="miles"/>
-//         <input readonly id="updatedDistanceRemaining" placeholder="miles to go"/>
-//         </form>
-    
-//     </div>
+   // db.user.updateOne({username: "keith"}, {$set:{usermiles: newUserMiles})
