@@ -1,5 +1,4 @@
 import React from 'react';
-import CurrentWalk from '../components/CurrentWalk'
 import MileInput from '../components/logMiles/mileInput';
 import Progress from '../components/Progress'
 import InBetween from '../components/InBetween';
@@ -7,10 +6,9 @@ import InBetween from '../components/InBetween';
 export default function Profile() {
     return(
         <div>
-                <CurrentWalk/>
+                <MileInput/>
                 <InBetween />
                 <Progress />
-                <MileInput/>
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import TrailList from '../components/TrailList'
 import { Form } from 'react-bootstrap';
 import API from "../utils/API"
 

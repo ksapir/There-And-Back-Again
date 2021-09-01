@@ -2,7 +2,7 @@ import React from 'react';
 import LandingPage from './pages/LandingPage';
 import Profile from './pages/Profile';
 import TrailFinder from './pages/TrailFinder';
-import Fellowships from './pages/Fellowships'
+import Journeys from './pages/Journeys'
 import Walks from './pages/Walks'
 import Footer from './components/Footer';
 import './styles/style.css'
@@ -26,7 +26,7 @@ function App() {
           <Link to='/'>Home</Link>
           <Link to='/profile'>My Profile</Link>
           <Link to='/trailfinder'>Trail Finder</Link>
-          <Link to='/fellowship'>Fellowship</Link>
+          <Link to='/journeys'>Journeys</Link>
           <Link to='/mywalks'>My Walks</Link>
         </nav>
 
@@ -37,7 +37,7 @@ function App() {
           <Switch>
             <Route exact path='/'><LandingPage /></Route>
             <Route exact path='/profile'><Profile /></Route>
-            <Route exact path='/fellowship'><Fellowships /></Route>
+            <Route exact path='/journeys'><Journeys /></Route>
             <Route exact path='/trailfinder'><TrailFinder /></Route>
             <Route exact path='/mywalks'><Walks /></Route>
           </Switch>

@@ -89,7 +89,8 @@ export default function MileInput(props) {
   };
 
   return (
-    <div>
+    <div className="container section center">
+      <h3>Log The Miles You Have Walked</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="number"
