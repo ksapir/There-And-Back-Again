@@ -125,7 +125,7 @@ const [formState,setFormState] = useState({
   const [signupFormState,setSignupFormState] = useState({
     email:"",
     password:"",
-    name:""
+    username:""
   })
 
   const [userState,setUserState] = useState({
@@ -173,7 +173,7 @@ const [formState,setFormState] = useState({
         token:res.data.token,
         user:{
           email:res.data.user.email,
-          name:res.data.user.name,
+          username:res.data.user.username,
           id:res.data.user.id
         }
       })
@@ -213,27 +213,5 @@ const [formState,setFormState] = useState({
       handleSignupFormSubmit={handleSignupFormSubmit}
       handleLogout={handleLogout}
       />
-//         <div className="NavBar" user={userState.user} >
-//       {/* <Link to="/">Home</Link> */}
-//       {!user.name ? (<>
-//         <form onSubmit = {handleFormSubmit}> 
-//         <input name="email" value = {formState.email} onChange={(e)=>setFormState({...formState,email:e.target.value})}/>
-//         <input name="password"  type="password" value = {formState.password} onChange={(e)=>setFormState({...formState,password:e.target.value})}/>
-//         <input type="submit" value="login"/>
-//       </form>
-//       <form onSubmit = {handleSignupFormSubmit}> 
-//         <input name="email" value = {signupFormState.email} onChange={(e)=>setSignupFormState({...signupFormState,email:e.target.value})}/>
-//         <input name="name" value = {signupFormState.name} onChange={(e)=>setSignupFormState({...signupFormState,name:e.target.value})}/>
-//         <input name="password"  type="password" value = {signupFormState.password} onChange={(e)=>setSignupFormState({...signupFormState,password:e.target.value})}/>
-//         <input type="submit" value="signup"/>
-//       </form>
-//       </>):(
-//        <>
-//       <h1>Welcome back, {user.name}</h1>
-//       <button onClick={handleLogout}>Logout</button>
-//      </>
-//     )}
-//     </div>
-//   )
   )}
 export default LandingPage
