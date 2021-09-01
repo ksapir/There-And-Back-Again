@@ -52,17 +52,6 @@ function LandingPage() {
         setPassword('');
         setEmail('');
 
-<<<<<<< HEAD
-
-
-
-        
-    };
-
-    return (
-        <div className="container section" style={styles.center}>
-             {/* <mileInput/> */}
-=======
         // const[user, setUser] = useState('')
 
         // useEffect(() => {
@@ -79,7 +68,6 @@ function LandingPage() {
     return (
         <div className="container center section">
      
->>>>>>> 059192a948dc8954cb1e7c185aaedf7cb321660f
                 <h2 >Let's Go on an Adventure!</h2>
 
             <div className="row">

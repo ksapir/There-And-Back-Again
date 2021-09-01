@@ -1,9 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-// import { useQuery } from '@apollo/client';
-=======
-
->>>>>>> 059192a948dc8954cb1e7c185aaedf7cb321660f
  
 export default function TrailList({ trails }){
 
