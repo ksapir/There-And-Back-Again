@@ -37,15 +37,17 @@ export default function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("token")
+    console.log(userState)
     if (token) {
-      API.getProfile(token).then(res => {
+      API.getProfile(token, userState.user._id).then(res => {
         console.log(res.data);
         setUserState({
           token: token,
           user: {
             email: res.data.email,
             password: res.data.password,
-            username: res.data.username
+            username: res.data.username,
+            _id: res.data.user._id
           }
         })
       }).catch(err => {
@@ -73,7 +75,8 @@ export default function App() {
         user: {
           email: res.data.user.email,
           username: res.data.user.username,
-          password: res.data.user.password
+          password: res.data.user.password,
+          _id: res.data.user._id
         }
       })
     }).catch(err => {
@@ -102,7 +105,8 @@ export default function App() {
         user: {
           email: res.data.user.email,
           username: res.data.user.username,
-          password: res.data.user.password
+          password: res.data.user.password,
+          _id: res.data.user._id
         }
       })
     }).catch(err => {
@@ -134,9 +138,11 @@ export default function App() {
     <div>
       <Router>
         <div>
-          <div className="container section center">
-
+       
+          <div className="container section center" >
+          
             <h1>There and Back Again</h1>
+           
             {!userState.token ? (<>
             <nav>
               <Link to='/trailfinder'>Trail Finder</Link>
@@ -150,9 +156,13 @@ export default function App() {
               <Link to='/trailfinder'>Trail Finder</Link>
               <Link to='/' onClick={handleLogout}>Logout</Link>
             </nav>
+
           </>
+
           )}
+
           </div>
+
         </div>
 
           <div className="container center section">
@@ -160,29 +170,29 @@ export default function App() {
             <div className="row">
               <div className="col-sm-12 col-md-5 col-lg-5">
               <form onSubmit={handleFormSubmit}>
-                <input name="email" placeholder="email" value={formState.email} onChange={(e) => setFormState({ ...formState, email: e.target.value })} />
+                <input name="email" placeholder="email" class="userAuth" value={formState.email} onChange={(e) => setFormState({ ...formState, email: e.target.value })} />
 
-                <input name="password" type="password" placeholder="password" value={formState.password} onChange={(e) => setFormState({ ...formState, password: e.target.value })} />
+                <input name="password" type="password" placeholder="password"  class="userAuth" value={formState.password} onChange={(e) => setFormState({ ...formState, password: e.target.value })} />
 
-                <input type="submit" value="Login" />
+                <input type="submit" value="Login" class="authBtn" />
               </form>
               </div>
 
               <div className="col-sm-12 col-md-5 col-lg-5">
               <form onSubmit={handleSignupFormSubmit}>
-                <input name="email" placeholder="email" value={signupFormState.email} onChange={(e) => setSignupFormState({ ...signupFormState, email: e.target.value })} />
+                <input name="email" placeholder="email"  class="userAuth" value={signupFormState.email} onChange={(e) => setSignupFormState({ ...signupFormState, email: e.target.value })} />
 
-                <input name="username" placeholder="username" value={signupFormState.username} onChange={(e) => setSignupFormState({ ...signupFormState, username: e.target.value })} />
+                <input name="username" placeholder="username"   class="userAuth" value={signupFormState.username} onChange={(e) => setSignupFormState({ ...signupFormState, username: e.target.value })} />
 
-                <input name="password" placeholder="password" type="password" value={signupFormState.password} onChange={(e) => setSignupFormState({ ...signupFormState, password: e.target.value })} />
+                <input name="password" placeholder="password" type="password"  class="userAuth" value={signupFormState.password} onChange={(e) => setSignupFormState({ ...signupFormState, password: e.target.value })} />
 
-                <input type="submit" value="Signup" />
+                <input type="submit" value="Signup" class="authBtn" />
               </form>
               </div>
               </div>
             </>) : (
               <>
-              <Redirect to='/users/:_id'/>
+              <Redirect to={`/users/${userState.user._id}`}/>
               </>
             )}
           </div>
