@@ -138,7 +138,6 @@ export default function App() {
             <h1>There and Back Again</h1>
             {!userState.token ? (<>
             <nav>
-              <Link to='/'>Home</Link>
               <Link to='/trailfinder'>Trail Finder</Link>
               </nav>
               </>) : (
@@ -147,6 +146,7 @@ export default function App() {
               <Link to='/journeys'>Journeys</Link>
               <Link to='/users/:id'>My Profile</Link>
               <Link to='/mywalks'>My Walks</Link>
+              <Link to='/trailfinder'>Trail Finder</Link>
               <Link to='/' onClick={handleLogout}>Logout</Link>
             </nav>
           </>
