@@ -72,6 +72,7 @@ export default function App() {
     e.preventDefault();
     API.login(formState).then(res => {
       console.log(res.data);
+      alert("logged in!")
       localStorage.setItem("token", res.data.token)
       setUserState({
         ...userState,
@@ -104,6 +105,7 @@ export default function App() {
     e.preventDefault();
     API.signup(signupFormState).then(res => {
       console.log(res.data);
+      alert("Sign up Success!")
       localStorage.setItem("token", res.data.token)
       setUserState({
         ...userState,
