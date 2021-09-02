@@ -4,6 +4,7 @@ import TrailFinder from './pages/TrailFinder';
 import Journeys from './pages/Journeys'
 import Walks from './pages/Walks'
 import Footer from './components/Footer';
+import JourneyStops from './components/JourneyStops';
 import API from './utils/API'
 import './styles/style.css'
 
@@ -154,7 +155,7 @@ export default function App() {
           </div>
         </div>
 
-          <div className="center section">
+          <div className="container center section">
           {!userState.token ? (<>
             <div className="row">
               <div className="col-sm-12 col-md-5 col-lg-5">
@@ -190,9 +191,10 @@ export default function App() {
         <div>
           <div className="App">
             <Switch>
-              <Route exact path='/'></Route>
+              <Route exact path='/'><Journeys /></Route>
               <Route exact path='/users/:id'><Profile user={userState.user._id} token={userState.token} /></Route>
               <Route exact path='/journeys'><Journeys /></Route>
+              <Route exact path='/journey/lotr'><JourneyStops /></Route>
               <Route exact path='/trailfinder'><TrailFinder /></Route>
               <Route exact path='/mywalks'><Walks user={userState.user._id} token={userState.token}/></Route>
             </Switch>
