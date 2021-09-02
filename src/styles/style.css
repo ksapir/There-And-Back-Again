@@ -18,7 +18,7 @@ body {
 
 div {
     margin: 30px;
-    font-size: 35px !important;
+    font-size: 38px !important;
     font-family: 'Bilbo Swash Caps', cursive;
     color: var(--textColor);
 }
@@ -27,10 +27,12 @@ div {
 .section {
     background-color: var(--translucent);
     opacity: 100%;
+   
 }
 
 nav{
     display: flex;
+    
 }
 
 h1, 
@@ -83,6 +85,7 @@ a {
     color: white;
 }
 
+
 @media (max-width: 575.98px) { 
     :root {
         --background: #CBA836;
@@ -113,3 +116,4 @@ a {
         height: 100%;
     }
 }
+
