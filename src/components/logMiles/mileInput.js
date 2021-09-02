@@ -51,7 +51,7 @@ export default function MileInput(props) {
     // fetch user id and update userMiles
     // fetch("api/users/:id")
     // API.updateUser
-    fetch("https://localhost:3001/api/users/:id", {
+    fetch("https://localhost:3001/api/users/journey:id", {
       method: "post",
       body: JSON.stringify({
         userMiles: `${newUserMiles}`,
