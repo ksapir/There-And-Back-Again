@@ -24,6 +24,10 @@ const API = {
   allTrails: function() {
     return axios.get(`${URL_PREFIX}/api/trails`)
   },
+
+  allLotr: function() {
+    return axios.get(`${URL_PREFIX}/api/lotr`)
+  }
 }
 
 export default API

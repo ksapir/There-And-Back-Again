@@ -1,41 +1,48 @@
-import React, {useState} from 'react';
-
-// const initialFormnData = {
-//     formJourney: "",
-//   };
-
-//   Object.freeze(initialFormnData);
-
-export default function Journey() {
-
-    // const[formState, setFormState] =useState({...initialFormnData})
-
-    // const handleChange = ()
+import React, {useState, useEffect} from 'react';
+import { Card, Form } from 'react-bootstrap';
+import API from "../utils/API"
 
 
-    // document.getElementById("lotrBtn").addEventListener("submit")
+
+
+
+
+    export default function LotrBreakpoints() {
+        const[lotrJourneys, setLotrJourney] = useState([])
+    
+        useEffect(() => {
+          API.allLotr().then(res => {
+              console.log(res)
+              setLotrJourney(res.data)
+          })
+        }, [])
+
+
+
 
 
     return (
         <div className="container center">
             <div className="row">
                 <div className="col-sm-12 col-md-4 col-lg-4 center">
-            <form >
-                <div >    
+            <Form>
+              
               <button type="submit" id="lotrBtn" value="journey">  <img
                         src={`https://i.postimg.cc/2Smk0q6L/51h5k-RXyip-L-AC-SX466.jpg`}
                         alt="LOTR Journey Card" /> </button>
                     <h3>Lord of the Rings</h3>
-             </div>       
+              
 
+           
                   <div>  
                    
+                  
                <button>  <img
                         src={`https://i.postimg.cc/sfqCNMnD/91-T5b-Tv-HRc-L-AC.jpg`}
                         alt="Journey Card" /> </button>   
                     <h3>The Hobbit (coming soon)</h3>
              </div>
-
+          
              <div>
              <button>     <img
                         src={`https://i.postimg.cc/hPZsrmMp/68004cf9767ee6787c2e7dad7cb1f43e.jpg`}
@@ -50,10 +57,28 @@ export default function Journey() {
                     <h3>Game of Thrones - Winterfell to the Wall  (coming soon)</h3>
             </div>
 
-            </form>
+            </Form>
                 </div>
           
             </div>
+
+            <div className="container center">
+        {lotrJourneys.map((lotrJourney) => (
+        <div className=" section row">
+          <section className="col-sm-12 col-md-6 col-lg-6" key={lotrJourney._id}>
+            <h2>{ lotrJourney.name }</h2>
+            <p >Distance: { lotrJourney.distance }</p>
+            <p >City, State: { lotrJourney.location}, </p>
+           {/* <div>{lotrJourney.url} </div> */}
+          </section>
         </div>
+        ))}
+        </div>
+
+
+
+    </div>
+
+
     )
 }
