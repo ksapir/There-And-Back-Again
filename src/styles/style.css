@@ -65,6 +65,7 @@ input {
     display: block;
     width: 100%;
     border-radius: 5px;
+    background-color: #FEF5E7;
 }
 
 a {
