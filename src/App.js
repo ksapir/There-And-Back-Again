@@ -134,9 +134,11 @@ export default function App() {
     <div>
       <Router>
         <div>
-          <div className="container section center">
-
+       
+          <div className="container section center" >
+          
             <h1>There and Back Again</h1>
+           
             {!userState.token ? (<>
             <nav>
               <Link to='/trailfinder'>Trail Finder</Link>
@@ -150,9 +152,13 @@ export default function App() {
               <Link to='/trailfinder'>Trail Finder</Link>
               <Link to='/' onClick={handleLogout}>Logout</Link>
             </nav>
+
           </>
+
           )}
+
           </div>
+
         </div>
 
           <div className="container center section">
@@ -160,23 +166,23 @@ export default function App() {
             <div className="row">
               <div className="col-sm-12 col-md-5 col-lg-5">
               <form onSubmit={handleFormSubmit}>
-                <input name="email" placeholder="email" value={formState.email} onChange={(e) => setFormState({ ...formState, email: e.target.value })} />
+                <input name="email" placeholder="email" class="userAuth" value={formState.email} onChange={(e) => setFormState({ ...formState, email: e.target.value })} />
 
-                <input name="password" type="password" placeholder="password" value={formState.password} onChange={(e) => setFormState({ ...formState, password: e.target.value })} />
+                <input name="password" type="password" placeholder="password"  class="userAuth" value={formState.password} onChange={(e) => setFormState({ ...formState, password: e.target.value })} />
 
-                <input type="submit" value="Login" />
+                <input type="submit" value="Login" class="authBtn" />
               </form>
               </div>
 
               <div className="col-sm-12 col-md-5 col-lg-5">
               <form onSubmit={handleSignupFormSubmit}>
-                <input name="email" placeholder="email" value={signupFormState.email} onChange={(e) => setSignupFormState({ ...signupFormState, email: e.target.value })} />
+                <input name="email" placeholder="email"  class="userAuth" value={signupFormState.email} onChange={(e) => setSignupFormState({ ...signupFormState, email: e.target.value })} />
 
-                <input name="username" placeholder="username" value={signupFormState.username} onChange={(e) => setSignupFormState({ ...signupFormState, username: e.target.value })} />
+                <input name="username" placeholder="username"   class="userAuth" value={signupFormState.username} onChange={(e) => setSignupFormState({ ...signupFormState, username: e.target.value })} />
 
-                <input name="password" placeholder="password" type="password" value={signupFormState.password} onChange={(e) => setSignupFormState({ ...signupFormState, password: e.target.value })} />
+                <input name="password" placeholder="password" type="password"  class="userAuth" value={signupFormState.password} onChange={(e) => setSignupFormState({ ...signupFormState, password: e.target.value })} />
 
-                <input type="submit" value="Signup" />
+                <input type="submit" value="Signup" class="authBtn" />
               </form>
               </div>
               </div>

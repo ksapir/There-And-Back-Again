@@ -23,7 +23,8 @@ export default function JourneyStops () {
           <div className=" section row">
             <section className="col-sm-12 col-md-6 col-lg-6" key={journey._id}>
               <h2>{journey.name}</h2>
-              <p>Distance: {journey.distance}</p>
+              <hr/>
+              <p>Distance: {journey.distance} miles</p>
               <p> {journey.description}, </p>
               </section>
               <section className="col-sm-12 col-md-6 col-lg-6">
