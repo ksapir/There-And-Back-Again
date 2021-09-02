@@ -14,13 +14,12 @@ const API = {
     return axios.post(`${URL_PREFIX}/api/users`, userData)
   },
   getProfile: function (token) {
-    return axios.get(`${URL_PREFIX}/user`, {
+    return axios.get(`${URL_PREFIX}/users/:_id`, {
         headers: {
             authorization: `Bearer ${token}`
         }
     })
 },
-
   allTrails: function() {
     return axios.get(`${URL_PREFIX}/api/trails`)
   },
