@@ -53,8 +53,8 @@ export default function Profile(props) {
                 <MileInput/>
        
                 <InBetween />
-           
-                {/* <Progress /> */}
+{/*            
+                <Progress /> */}
         </div>
         </div>
     )
