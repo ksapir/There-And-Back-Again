@@ -16,71 +16,27 @@ export default function MileInput(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //established variables
-    //will grab userMiles from here to go forward
-    const userMiles = 50;
-    // const groupMiles = 50;
-    // const userMilesToGo = 1900;
-    // const groupMilesToGo= 1900;
-
-
-
     // console log
-    console.log("current user miles " + userMiles);
-    // console.log("current group miles " + groupMiles);
-    // console.log("current user miles left to go " + userMilesToGo);
-    // console.log("current group miles left to go  " + groupMilesToGo);
+    console.log("current user miles " + props.user.userMiles);
     
     console.log(formState);
 
     
 //parsing into integers
 //takes form state plus previous user miles
-    const newUserMiles = parseInt(formState.formMiles) + parseInt(userMiles);
+    const newUserMiles = parseInt(formState.formMiles) + parseInt(props.user.userMiles);
 
-    // const newGroupMiles = parseInt(formState.formMiles) + parseInt(groupMiles);
-
-    // const newUserMilesToGo = parseInt(userMilesToGo) - parseInt(formState.formMiles);
-
-    // const newGroupMilesToGo = parseInt(groupMilesToGo) - parseInt(formState.formMiles);
 
 
     // console log 
     console.log("updated user miles " + newUserMiles);
     alert("logged! New total " + newUserMiles)
-    // console.log("updated group miles " + newGroupMiles);
-    // console.log("updated user miles left to go " + newUserMilesToGo);
-    // console.log("updated group miles left to go " + newGroupMilesToGo)
 
-
-    // fetch user id and update userMiles
-    // fetch("api/users/:id")
-    // API.logMiles
-    // fetch("https://localhost:3001/api/users/journey:id", {
-    //   method: "post",
-    //   body: JSON.stringify({
-    //     userMiles: `${newUserMiles}`,
-    //     userMilesToGo: `${newUserMilesToGo}`
-    //   }),
-    //   headers: { "Content-Type": "application/json" },
-    // })
-    //   .then(function () {
-    //     console.log("userMiles logged!");
-    //     console.log("userMilesToGo logged!");
-    //   })
-    //   .catch((error) => console.log(error));
-
-    
       API.logMiles(newUserMiles, props.token).then(res => {
         console.log(res)
-
+        window.location.reload()
       })
-    
-   
-
-
-
-
+  
      
   };
 //return of form input
@@ -101,4 +57,4 @@ export default function MileInput(props) {
     </div>
   );
 }
-   // db.user.updateOne({username: "keith"}, {$set:{usermiles: newUserMiles})
+ 
