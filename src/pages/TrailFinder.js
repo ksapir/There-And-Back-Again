@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import TrailList from '../components/TrailList'
 import { Form } from 'react-bootstrap';
 import API from "../utils/API"
 
@@ -27,8 +26,8 @@ export default function TrailFinder() {
         </div>
         <div className="container center">
         {trails.map((trail) => (
-        <div className=" section row">
-          <section className="col-sm-12 col-md-6 col-lg-6" key={trail._id}>
+        <div className=" section row" key={trail._id}>
+          <section className="col-sm-12 col-md-6 col-lg-6">
             <h2>{ trail.name }</h2>
             <p >Park: { trail.parkName }</p>
             <p >Distance: { trail.distance }</p>

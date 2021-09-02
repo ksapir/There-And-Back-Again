@@ -1,5 +1,4 @@
 const axios = require("axios")
-
 // local
 const URL_PREFIX = "http://localhost:3001"
 
@@ -7,22 +6,30 @@ const URL_PREFIX = "http://localhost:3001"
 // created but nothing pushed to heroku  
 // const URL_PREFIX = "https://there-and-back-end.herokuapp.com/"
 
-
-
-
 const API = {
-
-  // example front end route
   login: function (userData) {
-    return axios.post(`${URL_PREFIX}/login`, userData)
+    return axios.post(`${URL_PREFIX}/api/auth`, userData)
   },
-
+  signup: function (userData) {
+    return axios.post(`${URL_PREFIX}/api/users`, userData)
+  },
+  getProfile: function (token) {
+    return axios.get(`${URL_PREFIX}/users/:_id`, {
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    })
+},
   allTrails: function() {
     return axios.get(`${URL_PREFIX}/api/trails`)
   },
+
+  allLotr: function() {
+
+    return axios.get(`${URL_PREFIX}/api/journey/lotr`)
+
+  }
 }
 
 export default API
 
-
-//  "mile"

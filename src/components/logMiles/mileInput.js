@@ -54,8 +54,7 @@ export default function MileInput(props) {
     // fetch user id and update userMiles
     // fetch("api/users/:id")
     // API.updateUser
-    //setting newusermiles to usermiles in fetch request
-    fetch("https://localhost:3001/users/:id", {
+    fetch("https://localhost:3001/api/users/:id", {
       method: "post",
       body: JSON.stringify({
         userMiles: `${newUserMiles}`,
@@ -93,7 +92,8 @@ export default function MileInput(props) {
   };
 //return of form input
   return (
-    <div>
+    <div className="container section center">
+      <h3>Log The Miles You Have Walked</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="number"
