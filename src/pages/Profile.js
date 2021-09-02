@@ -41,7 +41,9 @@ export default function Profile(props) {
     return(
         <div>
                 <MileInput/>
+       
                 <InBetween />
+           
                 <Progress />
         </div>
     )

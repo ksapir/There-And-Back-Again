@@ -29,7 +29,9 @@ export default function TrailFinder() {
         <div className=" section row" key={trail._id}>
           <section className="col-sm-12 col-md-6 col-lg-6">
             <h2>{ trail.name }</h2>
+            <hr/>
             <p >Park: { trail.parkName }</p>
+          
             <p >Distance: { trail.distance }</p>
             <p >City, State: { trail.location}, { trail.state}</p>
             <p >Description: { trail.description }</p>
