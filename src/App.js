@@ -37,9 +37,10 @@ export default function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("token")
-    // console.log(userState)
+  
+    console.log(token)
     if (token) {
-      API.getProfile(token, userState.user._id).then(res => {
+      API.getProfile(token).then(res => {
         console.log(res.data);
         setUserState({
           token: token,
@@ -47,10 +48,13 @@ export default function App() {
             email: res.data.email,
             password: res.data.password,
             username: res.data.username,
-            _id: res.data.user._id
+            _id: res.data._id,
+            userMiles: res.data.userMiles,
+            avatar: res.data.avatar
           }
         })
       }).catch(err => {
+        console.log(err)
         console.log("no logged in user")
         setUserState({
           token: "",
@@ -76,7 +80,9 @@ export default function App() {
           email: res.data.user.email,
           username: res.data.user.username,
           password: res.data.user.password,
-          _id: res.data.user._id
+          _id: res.data.user._id,
+          userMiles: res.data.userMiles,
+          avatar: res.data.avatar
         }
       })
     }).catch(err => {
@@ -106,7 +112,9 @@ export default function App() {
           email: res.data.user.email,
           username: res.data.user.username,
           password: res.data.user.password,
-          _id: res.data.user._id
+          _id: res.data.user._id,
+          userMiles: res.data.userMiles,
+          avatar: res.data.avatar
         }
       })
     }).catch(err => {
@@ -193,7 +201,7 @@ export default function App() {
             </>) : (
               <>
               <Redirect to={`/users/${userState.user._id}`}/>
-              </>
+              </> 
             )}
           </div>
 
@@ -202,11 +210,11 @@ export default function App() {
           <div className="App">
             <Switch>
               <Route exact path='/'><Journeys /></Route>
-              <Route exact path='/users/:id'><Profile user={userState.user._id} token={userState.token} /></Route>
+              <Route exact path='/users/:id'><Profile user={userState.user} token={userState.token} /></Route>
               <Route exact path='/journeys'><Journeys /></Route>
               <Route exact path='/journey/lotr'><JourneyStops /></Route>
               <Route exact path='/trailfinder'><TrailFinder /></Route>
-              <Route exact path='/mywalks'><Walks user={userState.user._id} token={userState.token}/></Route>
+              <Route exact path='/mywalks'><Walks user={userState.user} token={userState.token}/></Route>
             </Switch>
             <Footer />
           </div>
