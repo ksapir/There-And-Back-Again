@@ -7,7 +7,9 @@ export default function Profile() {
     return(
         <div>
                 <MileInput/>
+       
                 <InBetween />
+           
                 <Progress />
         </div>
     )
