@@ -20,6 +20,7 @@ const API = {
         }
     })
 },
+
   allTrails: function() {
     return axios.get(`${URL_PREFIX}/api/trails`)
   },

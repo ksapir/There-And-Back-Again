@@ -12,7 +12,7 @@ export default function JourneyStops () {
 
     useEffect(() => {
       API.allLotr().then((res) => {
-        console.log(res);
+        // console.log(res);
         setJourney(res.data);
       });
     }, []);
