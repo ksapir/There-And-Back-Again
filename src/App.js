@@ -16,6 +16,7 @@ import {
   Redirect
 } from "react-router-dom";
 
+
 export default function App() {
   const [formState, setFormState] = useState({
     email: "",
@@ -91,8 +92,8 @@ export default function App() {
 
   const handleSignupFormSubmit = e => {
     e.preventDefault();
-    console.log(signupFormState);
     API.signup(signupFormState).then(res => {
+      console.log(res.data);
       localStorage.setItem("token", res.data.token)
       setUserState({
         ...userState,
@@ -135,7 +136,7 @@ export default function App() {
           <div className="container section center">
 
             <h1>There and Back Again</h1>
-            {!userState.user.username ? (<>
+            {!userState.token ? (<>
             <nav>
               <Link to='/'>Home</Link>
               <Link to='/trailfinder'>Trail Finder</Link>
@@ -153,8 +154,8 @@ export default function App() {
           </div>
         </div>
 
-          <div className="container center section">
-          {!userState.user.username ? (<>
+          <div className="center section">
+          {!userState.token ? (<>
             <div className="row">
               <div className="col-sm-12 col-md-5 col-lg-5">
               <form onSubmit={handleFormSubmit}>
@@ -162,7 +163,7 @@ export default function App() {
 
                 <input name="password" type="password" placeholder="password" value={formState.password} onChange={(e) => setFormState({ ...formState, password: e.target.value })} />
 
-                <input type="submit" value="login" />
+                <input type="submit" value="Login" />
               </form>
               </div>
 
@@ -174,13 +175,13 @@ export default function App() {
 
                 <input name="password" placeholder="password" type="password" value={signupFormState.password} onChange={(e) => setSignupFormState({ ...signupFormState, password: e.target.value })} />
 
-                <input type="submit" value="signup" />
+                <input type="submit" value="Signup" />
               </form>
               </div>
               </div>
             </>) : (
               <>
-              <Redirect to='/users/:id'/>
+              <Redirect to='/users/:_id'/>
               </>
             )}
           </div>
