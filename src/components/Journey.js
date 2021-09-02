@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Redirect, Link } from "react-router-dom";
+
 
 import API from "../utils/API";
 
@@ -12,21 +14,24 @@ export default function LotrBreakpoints() {
     });
   }, []);
 
+
+
   return (
+  <div>
     <div className="container center">
-      <div className="row">
-        <div className="col-sm-12 col-md-4 col-lg-4 center">
-     
-            <button  id="lotrBtn" value="journey">
+        <div className="row">
+          <div className="col-sm-12 col-md-5 col-lg-5 center">
+          <Link to='/journey/lotr'  id="lotrBtn" value="journey">
               {" "}
               <img
                 src={`https://i.postimg.cc/2Smk0q6L/51h5k-RXyip-L-AC-SX466.jpg`}
                 alt="LOTR Journey Card"
               />{" "}
-            </button>
+            </Link>
             <h3>Lord of the Rings</h3>
+          </div>
 
-            <div>
+            <div className="col-sm-12 col-md-5 col-lg-5 center">
               <button>
                 {" "}
                 <img
@@ -36,8 +41,10 @@ export default function LotrBreakpoints() {
               </button>
               <h3>The Hobbit (coming soon)</h3>
             </div>
+        </div>
 
-            <div>
+          <div className="row">
+            <div className="col-sm-12 col-md-5 col-lg-5 center">
               <button>
                 {" "}
                 <img
@@ -50,7 +57,7 @@ export default function LotrBreakpoints() {
               </h3>
             </div>
 
-            <div>
+            <div className="col-sm-12 col-md-5 col-lg-5 center">
               <button>
                 {" "}
                 <img
@@ -60,22 +67,9 @@ export default function LotrBreakpoints() {
               </button>
               <h3>Game of Thrones - Winterfell to the Wall (coming soon)</h3>
             </div>
-        
-        </div>
-      </div>
-
-      <div className="container center">
-        {journey.map((journey) => (
-          <div className=" section row">
-            <section className="col-sm-12 col-md-6 col-lg-6" key={journey._id}>
-              <h2>{journey.name}</h2>
-              <p>Distance: {journey.distance}</p>
-              <p> {journey.description}, </p>
-              {/* <div>{journey.url} </div> */}
-            </section>
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+        </div>
+    
   );
 }
