@@ -37,7 +37,7 @@ export default function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("token")
-    console.log(userState)
+    // console.log(userState)
     if (token) {
       API.getProfile(token, userState.user._id).then(res => {
         console.log(res.data);
