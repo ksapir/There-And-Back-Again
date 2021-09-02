@@ -15,10 +15,12 @@ export default function MileInput(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //established variables
+    //will grab userMiles from here to go forward
     const userMiles = 50;
-    // const groupMiles = 50;
+    const groupMiles = 50;
     const userMilesToGo = 1900;
-    // const groupMilesToGo= 1900;
+    const groupMilesToGo= 1900;
 
 
 
@@ -31,7 +33,8 @@ export default function MileInput(props) {
     console.log(formState);
 
     
-
+//parsing into integers
+//takes form state plus previous user miles
     const newUserMiles = parseInt(formState.formMiles) + parseInt(userMiles);
 
     // const newGroupMiles = parseInt(formState.formMiles) + parseInt(groupMiles);
@@ -51,6 +54,7 @@ export default function MileInput(props) {
     // fetch user id and update userMiles
     // fetch("api/users/:id")
     // API.updateUser
+    //setting newusermiles to usermiles in fetch request
     fetch("https://localhost:3001/users/:id", {
       method: "post",
       body: JSON.stringify({
@@ -67,27 +71,27 @@ export default function MileInput(props) {
 
 
 
-// // fetch by fellowship id and update groupMiles
-//  // fetch by fellowship id and update groupMilesToGo
-//     // fetch("api/fellowship/:id")
-//     fetch("https://localhost:3001/fellowships/:id",{
-//       method: "post",
-//       body: JSON.stringify({
-//         groupMiles: `${newGroupMiles}`,
-//         groupMilesToGo:`${newGroupMilesToGo}`
-//       }),
-//       headers: {"Content-Type": "application/json"},
-//     })
-//     .then(function () {
-//       console.log("groupMiles logged!");
-//       console.log("groupMilestoGo logged!");
-//     })
-//       .catch((err) => console.log(err));
+// fetch by fellowship id and update groupMiles
+ // fetch by fellowship id and update groupMilesToGo
+    // fetch("api/fellowship/:id")
+    // fetch("https://localhost:3001/fellowships/:id",{
+    //   method: "post",
+    //   body: JSON.stringify({
+    //     groupMiles: `${newGroupMiles}`,
+    //     groupMilesToGo:`${newGroupMilesToGo}`
+    //   }),
+    //   headers: {"Content-Type": "application/json"},
+    // })
+    // .then(function () {
+    //   console.log("groupMiles logged!");
+    //   console.log("groupMilestoGo logged!");
+    // })
+    //   .catch((err) => console.log(err));
 
 
      
   };
-
+//return of form input
   return (
     <div>
       <form onSubmit={handleSubmit}>
