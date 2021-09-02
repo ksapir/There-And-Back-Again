@@ -13,8 +13,8 @@ const API = {
   signup: function (userData) {
     return axios.post(`${URL_PREFIX}/api/users`, userData);
   },
-  getProfile: function (token, userId) {
-    return axios.get(`${URL_PREFIX}/api/users/${userId}`, {
+  getProfile: function (token) {
+    return axios.get(`${URL_PREFIX}/api/users/me`, {
       headers: {
         authorization: `bearer ${token}`,
       },
@@ -41,7 +41,14 @@ const API = {
 
   trailLocation: function (location) {
     return axios.get(`${URL_PREFIX}/api/trails/${location}`);
-  } 
+  },
+  journeyBreakpoint: function (token) {
+    return axios.get(`${URL_PREFIX}/api/users/journey`, {
+      headers: {
+        authorization: `bearer ${token}`,
+      },
+    })
+  }
 };
 
 export default API;
