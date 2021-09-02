@@ -18,7 +18,7 @@ body {
 
 div {
     margin: 30px;
-    font-size: 35px !important;
+    font-size: 38px !important;
     font-family: 'Bilbo Swash Caps', cursive;
     color: var(--textColor)
 }
@@ -27,10 +27,12 @@ div {
 .section {
     background-color: var(--translucent);
     opacity: 100%;
+   
 }
 
 nav{
     display: flex;
+    
 }
 
 h1, 
@@ -81,3 +83,11 @@ a {
     background: rgb(63, 45, 21);
     color: white;
 }
+
+
+
+.img-container {
+    margin-bottom: 15px;
+}
+
+

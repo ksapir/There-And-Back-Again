@@ -22,13 +22,17 @@ export default function JourneyStops () {
         {journey.map((journey) => (
           <div className=" section row">
             <section className="col-sm-12 col-md-6 col-lg-6" key={journey._id}>
-              <h2>{journey.name}</h2>
+              <div >
+              <h1>{journey.name}</h1>
+              </div>
               <hr/>
-              <p>Distance: {journey.distance} miles</p>
+              <h2>Distance: {journey.distance} miles</h2>
+              <div class="journeyDesc">
               <p> {journey.description}, </p>
+              </div>
               </section>
-              <section className="col-sm-12 col-md-6 col-lg-6">
-              <img style={styles.img}
+              <section className="col-sm-12 col-md-6 col-lg-6" class="text-center">
+              <img class="img-container" style={styles.img}
                   src={journey.url}
                   alt="LOTR Journey"
                 />
