@@ -25,7 +25,9 @@ const API = {
   },
 
   allLotr: function() {
-    return axios.get(`${URL_PREFIX}/api/lotr`)
+
+    return axios.get(`${URL_PREFIX}/api/journey/lotr`)
+
   }
 }
 
