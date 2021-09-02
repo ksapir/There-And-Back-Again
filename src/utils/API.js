@@ -38,6 +38,10 @@ const API = {
     },}
     );
   },
+
+  trailLocation: function (location) {
+    return axios.get(`${URL_PREFIX}/api/trails/${location}`);
+  } 
 };
 
 export default API;
