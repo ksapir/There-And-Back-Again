@@ -1,10 +1,10 @@
-import React from 'react';
-import LandingPage from './pages/LandingPage';
+import React, { useState, useEffect } from 'react';
 import Profile from './pages/Profile';
 import TrailFinder from './pages/TrailFinder';
 import Journeys from './pages/Journeys'
 import Walks from './pages/Walks'
 import Footer from './components/Footer';
+import API from './utils/API'
 import './styles/style.css'
 
 
@@ -12,40 +12,196 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
-function App() {
-  return (
-    <Router>
-      <div>
-      <div className="container section center">
-      
-        <h1>There and Back Again</h1>
-        <nav >
-          <Link to='/'>Home</Link>
-          <Link to='/profile'>My Profile</Link>
-          <Link to='/trailfinder'>Trail Finder</Link>
-          <Link to='/journeys'>Journeys</Link>
-          <Link to='/mywalks'>My Walks</Link>
-        </nav>
 
-      </div>
-      </div>
-      <div>
-        <div className="App">
-          <Switch>
-            <Route exact path='/'><LandingPage /></Route>
-            <Route exact path='/profile'><Profile /></Route>
-            <Route exact path='/journeys'><Journeys /></Route>
-            <Route exact path='/trailfinder'><TrailFinder /></Route>
-            <Route exact path='/mywalks'><Walks /></Route>
-          </Switch>
-          <Footer />
+export default function App() {
+  const [formState, setFormState] = useState({
+    email: "",
+    password: ""
+  })
+  const [signupFormState, setSignupFormState] = useState({
+    email: "",
+    password: "",
+    username: ""
+  })
+
+  const [userState, setUserState] = useState({
+    token: "",
+    user: {
+    }
+  })
+
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    if (token) {
+      API.getProfile(token).then(res => {
+        console.log(res.data);
+        setUserState({
+          token: token,
+          user: {
+            email: res.data.email,
+            password: res.data.password,
+            username: res.data.username
+          }
+        })
+      }).catch(err => {
+        console.log("no logged in user")
+        setUserState({
+          token: "",
+          user: {}
+        })
+      })
+    } else {
+      console.log("no token provided")
+    }
+  }, [])
+
+
+
+  const handleFormSubmit = e => {
+    e.preventDefault();
+    API.login(formState).then(res => {
+      console.log(res.data);
+      localStorage.setItem("token", res.data.token)
+      setUserState({
+        ...userState,
+        token: res.data.token,
+        user: {
+          email: res.data.user.email,
+          username: res.data.user.username,
+          password: res.data.user.password
+        }
+      })
+    }).catch(err => {
+      console.log("error occured")
+      console.log(err);
+      localStorage.removeItem("token");
+      setUserState({
+        token: "",
+        user: {}
+      })
+    })
+    setFormState({
+      email: "",
+      password: ""
+    })
+  }
+
+  const handleSignupFormSubmit = e => {
+    e.preventDefault();
+    API.signup(signupFormState).then(res => {
+      console.log(res.data);
+      localStorage.setItem("token", res.data.token)
+      setUserState({
+        ...userState,
+        token: res.data.token,
+        user: {
+          email: res.data.user.email,
+          username: res.data.user.username,
+          password: res.data.user.password
+        }
+      })
+    }).catch(err => {
+      console.log("error occured")
+      console.log(err);
+      localStorage.removeItem("token");
+      setUserState({
+        token: "",
+        user: {}
+      })
+    })
+    setSignupFormState({
+      username: "",
+      email: "",
+      password: ""
+    })
+
+  }
+
+  const handleLogout = () => {
+    setUserState({
+      token: "",
+      user: {}
+    })
+    localStorage.removeItem("token")
+  }
+
+  return (
+    <div>
+      <Router>
+        <div>
+          <div className="container section center">
+
+            <h1>There and Back Again</h1>
+            {!userState.token ? (<>
+            <nav>
+              <Link to='/'>Home</Link>
+              <Link to='/trailfinder'>Trail Finder</Link>
+              </nav>
+              </>) : (
+                <>
+                <nav>
+              <Link to='/journeys'>Journeys</Link>
+              <Link to='/users/:id'>My Profile</Link>
+              <Link to='/mywalks'>My Walks</Link>
+              <Link to='/' onClick={handleLogout}>Logout</Link>
+            </nav>
+          </>
+          )}
+          </div>
         </div>
-      </div>
-  </Router>
-      );
+
+          <div className="center section">
+          {!userState.token ? (<>
+            <div className="row">
+              <div className="col-sm-12 col-md-5 col-lg-5">
+              <form onSubmit={handleFormSubmit}>
+                <input name="email" placeholder="email" value={formState.email} onChange={(e) => setFormState({ ...formState, email: e.target.value })} />
+
+                <input name="password" type="password" placeholder="password" value={formState.password} onChange={(e) => setFormState({ ...formState, password: e.target.value })} />
+
+                <input type="submit" value="Login" />
+              </form>
+              </div>
+
+              <div className="col-sm-12 col-md-5 col-lg-5">
+              <form onSubmit={handleSignupFormSubmit}>
+                <input name="email" placeholder="email" value={signupFormState.email} onChange={(e) => setSignupFormState({ ...signupFormState, email: e.target.value })} />
+
+                <input name="username" placeholder="username" value={signupFormState.username} onChange={(e) => setSignupFormState({ ...signupFormState, username: e.target.value })} />
+
+                <input name="password" placeholder="password" type="password" value={signupFormState.password} onChange={(e) => setSignupFormState({ ...signupFormState, password: e.target.value })} />
+
+                <input type="submit" value="Signup" />
+              </form>
+              </div>
+              </div>
+            </>) : (
+              <>
+              <Redirect to='/users/:_id'/>
+              </>
+            )}
+          </div>
+
+
+        <div>
+          <div className="App">
+            <Switch>
+              <Route exact path='/'></Route>
+              <Route exact path='/users/:id'><Profile user={userState.user._id} token={userState.token} /></Route>
+              <Route exact path='/journeys'><Journeys /></Route>
+              <Route exact path='/trailfinder'><TrailFinder /></Route>
+              <Route exact path='/mywalks'><Walks user={userState.user._id} token={userState.token}/></Route>
+            </Switch>
+            <Footer />
+          </div>
+        </div>
+      </Router>
+    </div>
+  )
 }
 
-      export default App;
+
