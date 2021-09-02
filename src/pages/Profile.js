@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MileInput from '../components/logMiles/mileInput';
-import Progress from '../components/Progress'
+// import Progress from '../components/Progress'
 import InBetween from '../components/InBetween';
 import API from '../utils/API'
 
@@ -16,7 +16,7 @@ export default function Profile(props) {
         // console.log(props)
         if (token) {
           API.getProfile(props.token, props.user).then(res => {
-            console.log(res.data.avatar);
+            // console.log(res.data.avatar);
             setUserState({
               token: props.token,
               user: {
@@ -54,7 +54,7 @@ export default function Profile(props) {
        
                 <InBetween />
            
-                <Progress />
+                {/* <Progress /> */}
         </div>
         </div>
     )
