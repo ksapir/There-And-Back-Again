@@ -16,6 +16,8 @@ export default function MileInput(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //established variables
+    //will grab userMiles from here to go forward
     const userMiles = 50;
     // const groupMiles = 50;
     // const userMilesToGo = 1900;
@@ -32,7 +34,8 @@ export default function MileInput(props) {
     console.log(formState);
 
     
-
+//parsing into integers
+//takes form state plus previous user miles
     const newUserMiles = parseInt(formState.formMiles) + parseInt(userMiles);
 
     // const newGroupMiles = parseInt(formState.formMiles) + parseInt(groupMiles);
@@ -80,7 +83,7 @@ export default function MileInput(props) {
 
      
   };
-
+//return of form input
   return (
     <div className="container section center">
       <h3>Log The Miles You Have Walked</h3>
