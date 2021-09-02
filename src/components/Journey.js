@@ -1,12 +1,19 @@
 import React, {useState} from 'react';
 
-const initialFormnData = {
-    formJourney: "",
-  };
+// const initialFormnData = {
+//     formJourney: "",
+//   };
 
-  Object.freeze(initialFormnData);
+//   Object.freeze(initialFormnData);
 
 export default function Journey() {
+
+    // const[formState, setFormState] =useState({...initialFormnData})
+
+    // const handleChange = ()
+
+
+    // document.getElementById("lotrBtn").addEventListener("submit")
 
 
     return (
@@ -15,7 +22,7 @@ export default function Journey() {
                 <div className="col-sm-12 col-md-4 col-lg-4 center">
             <form >
                 <div >    
-              <button type="submit" id="lotrBtn">  <img
+              <button type="submit" id="lotrBtn" value="journey">  <img
                         src={`https://i.postimg.cc/2Smk0q6L/51h5k-RXyip-L-AC-SX466.jpg`}
                         alt="LOTR Journey Card" /> </button>
                     <h3>Lord of the Rings</h3>
