@@ -28,7 +28,13 @@ const API = {
 
     return axios.get(`${URL_PREFIX}/api/journey/lotr`)
 
+  },
+
+  logMiles: function() {
+    return axios.get(`${URL_PREFIX}/api/journey/:id`)
+
   }
+
 }
 
 export default API
