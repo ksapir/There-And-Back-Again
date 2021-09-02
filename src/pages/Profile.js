@@ -40,7 +40,7 @@ export default function Profile(props) {
 
     return(
         <div>
-                <MileInput/>
+                <MileInput token={props.token}/>
        
                 <InBetween />
            
