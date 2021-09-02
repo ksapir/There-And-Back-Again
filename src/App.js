@@ -37,15 +37,17 @@ export default function App() {
 
   useEffect(() => {
     const token = localStorage.getItem("token")
+    console.log(userState)
     if (token) {
-      API.getProfile(token).then(res => {
+      API.getProfile(token, userState.user._id).then(res => {
         console.log(res.data);
         setUserState({
           token: token,
           user: {
             email: res.data.email,
             password: res.data.password,
-            username: res.data.username
+            username: res.data.username,
+            _id: res.data.user._id
           }
         })
       }).catch(err => {
@@ -73,7 +75,8 @@ export default function App() {
         user: {
           email: res.data.user.email,
           username: res.data.user.username,
-          password: res.data.user.password
+          password: res.data.user.password,
+          _id: res.data.user._id
         }
       })
     }).catch(err => {
@@ -102,7 +105,8 @@ export default function App() {
         user: {
           email: res.data.user.email,
           username: res.data.user.username,
-          password: res.data.user.password
+          password: res.data.user.password,
+          _id: res.data.user._id
         }
       })
     }).catch(err => {
@@ -182,7 +186,7 @@ export default function App() {
               </div>
             </>) : (
               <>
-              <Redirect to='/users/:_id'/>
+              <Redirect to={`/users/${userState.user._id}`}/>
               </>
             )}
           </div>

@@ -13,10 +13,10 @@ const API = {
   signup: function (userData) {
     return axios.post(`${URL_PREFIX}/api/users`, userData)
   },
-  getProfile: function (token) {
-    return axios.get(`${URL_PREFIX}/users/:_id`, {
+  getProfile: function (token, userId) {
+    return axios.get(`${URL_PREFIX}/api/users/${userId}`, {
         headers: {
-            authorization: `Bearer ${token}`
+            authorization: `bearer ${token}`
         }
     })
 },
