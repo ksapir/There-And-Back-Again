@@ -17,7 +17,7 @@ export default function InBetween(props) {
                 </section>
                 <section style={styles.center} className="col-sm-12 col-md-6 col-lg-6">
                     <p>{props.journeyStop?.description}</p>
-                    <img src={props.journeyStop?.url}/>
+                    <img src={props.journeyStop?.url} alt="alt img"/>
                 </section>
             </div>
             
