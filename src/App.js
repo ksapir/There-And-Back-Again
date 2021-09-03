@@ -82,8 +82,8 @@ export default function App() {
           username: res.data.user.username,
           password: res.data.user.password,
           _id: res.data.user._id,
-          userMiles: res.data.userMiles,
-          avatar: res.data.avatar
+          userMiles: res.data.user.userMiles,
+          avatar: res.data.user.avatar
         }
       })
     }).catch(err => {
@@ -115,8 +115,8 @@ export default function App() {
           username: res.data.user.username,
           password: res.data.user.password,
           _id: res.data.user._id,
-          userMiles: res.data.userMiles,
-          avatar: res.data.avatar
+          userMiles: res.data.user.userMiles,
+          avatar: res.data.user.avatar
         }
       })
     }).catch(err => {
