@@ -9,8 +9,8 @@
     --textColor: white;
 }
 
-.App {
-    /* background: url(//i5.walmartimages.com/asr/7034507f-ae3d-4091-8eba-8f71135fe36c.362dbf6a647df8cb6804e769c35bf989.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff) no-repeat center center fixed; */
+body {
+    background: url(//i5.walmartimages.com/asr/7034507f-ae3d-4091-8eba-8f71135fe36c.362dbf6a647df8cb6804e769c35bf989.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff) no-repeat center center fixed;
     background-size: cover;
     color: var(--textColor);
     
@@ -26,7 +26,7 @@ div {
 
 .section {
     background-color: var(--translucent);
-    opacity: 100%;
+    /* opacity: 100%; */
    
 }
 
