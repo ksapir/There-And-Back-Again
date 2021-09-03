@@ -105,7 +105,7 @@ a {
     }
     .section {
         background-color: var(--translucent);
-        opacity: 100%;
+        /* opacity: 100%; */
     }
     .center {
         text-align: center;
