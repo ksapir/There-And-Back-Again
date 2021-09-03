@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Profile from './pages/Profile';
 import TrailFinder from './pages/TrailFinder';
 import Journeys from './pages/Journeys'
-import Walks from './pages/Walks'
+// import Walks from './pages/Walks'
 import Footer from './components/Footer';
 import JourneyStops from './components/JourneyStops';
 import API from './utils/API'
@@ -216,7 +216,7 @@ export default function App() {
               <Route exact path='/journeys'><Journeys /></Route>
               <Route exact path='/journey/lotr'><JourneyStops /></Route>
               <Route exact path='/trailfinder'><TrailFinder /></Route>
-              <Route exact path='/mywalks'><Walks user={userState.user} token={userState.token}/></Route>
+              {/* <Route exact path='/mywalks'><Walks user={userState.user} token={userState.token}/></Route> */}
             </Switch>
             <Footer />
           </div>
