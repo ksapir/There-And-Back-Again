@@ -41,7 +41,7 @@ export default function Profile(props) {
                 <MileInput user={props.user} token={props.token}/>
        
 
-                <InBetween />
+                <InBetween journeyStop={journeyStop}/>
 {/*            
                 <Progress /> */}
 

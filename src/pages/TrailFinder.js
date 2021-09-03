@@ -24,11 +24,14 @@ export default function TrailFinder() {
 
     const handleSubmit = (e) => {
       e.preventDefault()
+      console.log('----------')
       API.trailLocation(location.location).then(res => {
         setTrails(res.data)
       
         console.log(res.data)
        
+      }).catch(err => {
+        console.log(err)
       })
     }
   
@@ -40,7 +43,7 @@ export default function TrailFinder() {
                     <Form onSubmit={handleSubmit}>
                     <input name ="location" placeholder = "Search by City or National Park i.e. Seattle " 
                     value={location.location} onChange={handleChange}/>
-                     <button type="button">Search</button>
+                     <button>Search</button>
                     </Form>
                    
  
