@@ -6,7 +6,7 @@ import Walks from './pages/Walks'
 import Footer from './components/Footer';
 import JourneyStops from './components/JourneyStops';
 import API from './utils/API'
-import './styles/style.css'
+// import './styles/style.css'
 
 
 import {
@@ -145,7 +145,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="App">
       <Router>
         <div>
        
