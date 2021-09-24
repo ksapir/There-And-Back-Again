@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Profile from './pages/Profile';
 import TrailFinder from './pages/TrailFinder';
 import Journeys from './pages/Journeys'
-// import Walks from './pages/Walks'
+import Walks from './pages/Walks'
 import Footer from './components/Footer';
 import JourneyStops from './components/JourneyStops';
 import API from './utils/API'
