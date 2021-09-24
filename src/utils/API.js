@@ -1,10 +1,10 @@
 const axios = require("axios");
 // local
-// const URL_PREFIX = "http://localhost:3001";
+const URL_PREFIX = "http://localhost:3001";
 
 // deployed
 // created but nothing pushed to heroku
-const URL_PREFIX = "https://there-and-back-end.herokuapp.com"
+// const URL_PREFIX = "https://there-and-back-end.herokuapp.com"
 
 const API = {
   login: function (userData) {

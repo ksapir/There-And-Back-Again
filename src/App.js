@@ -145,7 +145,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="App">
       <Router>
         <div>
        
@@ -216,7 +216,7 @@ export default function App() {
               <Route exact path='/journeys'><Journeys /></Route>
               <Route exact path='/journey/lotr'><JourneyStops /></Route>
               <Route exact path='/trailfinder'><TrailFinder /></Route>
-              <Route exact path='/mywalks'><Walks user={userState.user} token={userState.token}/></Route>
+              {/* <Route exact path='/mywalks'><Walks user={userState.user} token={userState.token}/></Route> */}
             </Switch>
             <Footer />
           </div>
