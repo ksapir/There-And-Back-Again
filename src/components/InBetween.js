@@ -14,7 +14,7 @@ export default function InBetween(props) {
                 <section className="col-sm-12 col-md-6 col-lg-6">
                     <h3>You just left {props.journeyStop?.name}</h3>
                     <p>Last Journey Breakpoint {props.journeyStop?.distance} miles</p> 
-                    {/* <p>You've walked {props.user.userMies}</p> */}
+                    {/* <p>You have walked {props.journeyStop?.props.user.userMies}</p> */}
                 </section>
                 <section style={styles.center} className="col-sm-12 col-md-6 col-lg-6">
                     <p>{props.journeyStop?.description}</p>
