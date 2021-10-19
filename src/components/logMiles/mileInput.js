@@ -16,6 +16,7 @@ export default function MileInput(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     // console log
     console.log("current user miles " + props.user.userMiles);
     
@@ -26,8 +27,8 @@ export default function MileInput(props) {
 //takes form state plus previous user miles
     const newUserMiles = parseInt(formState.formMiles) + parseInt(props.user.userMiles);
 
-
-
+  
+    
     // console log 
     console.log("updated user miles " + newUserMiles);
     alert("logged! New total " + newUserMiles)
@@ -52,7 +53,7 @@ export default function MileInput(props) {
           value={formState.formMiles}
           onChange={handleChange}
           required
-        />
+
         <button type="submit">Log Miles</button>
       </form>
     </div>

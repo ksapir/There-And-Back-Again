@@ -2,6 +2,8 @@
 
 ## Deployed
 
+https://there-and-back-again-front.herokuapp.com/
+
 ## User Story
 ```md
 AS A fantasy fan 
@@ -15,11 +17,17 @@ Why just go for a walk when you could be part of an epic journey? Choose from ou
 
 ## Table of contents:
 - [Installation](#installation)
+- [Technologies](#tech)
 - [Dependencies](#dependencies)
 - [Mock Up](#mockup)
 - [credits](#credits)
 
-## Installation
+## Technologies
+- React
+- NoSQL
+- MongoDB
+
+## Dependencies
 Dependencies:
  - bcrypt
  - bootstrap
@@ -36,6 +44,17 @@ Dependencies:
  
 
 ## Mock Up
+
+Log in and pick a Journey"
+![image](https://user-images.githubusercontent.com/84876493/132052116-7e7c0fb9-e79e-4235-8816-fc2929312713.png)
+
+
+Profile Page:
+![image](https://user-images.githubusercontent.com/84876493/132051995-7ef52646-a72d-46a7-a6e0-7510da2d612a.png)
+
+Find Trails based by location:
+![image](https://user-images.githubusercontent.com/84876493/132052049-cddcf6ad-636c-41fe-9218-1afd7dcfbb20.png)
+
 
 ## Credits
 Our Fellowship is made up of:
