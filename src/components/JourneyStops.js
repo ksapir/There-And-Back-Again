@@ -3,7 +3,7 @@ import API from '../utils/API'
 
 const styles= {
     img: {
-        width: '100%',
+        width: '75%',
     }
 }
 
