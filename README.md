@@ -17,11 +17,17 @@ Why just go for a walk when you could be part of an epic journey? Choose from ou
 
 ## Table of contents:
 - [Installation](#installation)
+- [Technologies](#tech)
 - [Dependencies](#dependencies)
 - [Mock Up](#mockup)
 - [credits](#credits)
 
-## Installation
+## Technologies
+- React
+- NoSQL
+- MongoDB
+
+## Dependencies
 Dependencies:
  - bcrypt
  - bootstrap
