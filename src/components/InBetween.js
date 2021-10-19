@@ -4,6 +4,10 @@ import React from 'react';
 const styles={
     center: {
         textAlign: 'center',
+    },
+    img: {
+        width: '100%',
+        height: '100%',
     }
 }
 
@@ -13,11 +17,11 @@ export default function InBetween(props) {
             <div className="row">
                 <section className="col-sm-12 col-md-6 col-lg-6">
                     <h3>You just left {props.journeyStop?.name}</h3>
-                    <p>You walked {props.journeyStop?.distance} miles</p> 
+                    <p>Last journey breakpoint: {props.journeyStop?.distance} miles</p> 
+                    <img style={styles.img} src={props.journeyStop?.url}/>
                 </section>
                 <section style={styles.center} className="col-sm-12 col-md-6 col-lg-6">
                     <p>{props.journeyStop?.description}</p>
-                    <img src={props.journeyStop?.url}/>
                 </section>
             </div>
             

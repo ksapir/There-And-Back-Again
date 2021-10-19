@@ -51,6 +51,7 @@ export default function MileInput(props) {
           name="formMiles"
           value={formState.formMiles}
           onChange={handleChange}
+          required
         />
         <button type="submit">Log Miles</button>
       </form>
